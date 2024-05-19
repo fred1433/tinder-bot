@@ -20,11 +20,11 @@ while not os.path.exists(session_ready_path):
     time.sleep(1)
 
 # Step 3: Wait a few more seconds to ensure the browser is fully ready
-time.sleep(20)
+time.sleep(10)  # Reduced from 20 seconds to 10 seconds
 
 # Step 4: Start the loop for 20 to 30 minutes
 start_time = time.time()
-run_duration = random.uniform(20 * 60, 30 * 60)  # Random duration between 20 and 30 minutes
+run_duration = random.uniform(20 * 60, 25 * 60) 
 
 while time.time() - start_time < run_duration:
     # Step 5: Run extract_image.py
@@ -43,8 +43,8 @@ while time.time() - start_time < run_duration:
     print(f"Running navigate_tinder.py with is_beautiful={is_beautiful}...")
     subprocess.run(["python3", "/Users/frederic/tinder-bot/navigate_tinder.py", str(is_beautiful)])
 
-    # Step 8: Wait for 1 to 3 seconds before the next iteration
-    time.sleep(random.uniform(1, 3))
+    # Step 8: Wait for 0.5 to 1.5 seconds before the next iteration
+    time.sleep(random.uniform(0.5, 1.5))
 
 # Step 9: Wait for user to close the browser manually
 input("Please close the browser manually when you are done...")
