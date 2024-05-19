@@ -1,6 +1,12 @@
+
+#main_script.py
+
 import subprocess
 import time
 import os
+
+def run_script(script_path):
+    return subprocess.run(["python3", script_path])
 
 # Step 1: Run open_tinder.py
 print("Running open_tinder.py...")
@@ -17,15 +23,22 @@ time.sleep(10)
 
 # Step 4: Run extract_image.py
 print("Running extract_image.py...")
-subprocess.run(["python3", "/Users/frederic/tinder-bot/extract_image.py"])
+run_script("/Users/frederic/tinder-bot/extract_image.py")
 
-# Step 5: Run evaluation.py
+# Step 5: Run evaluation.py and capture the result
 print("Running evaluation.py...")
-subprocess.run(["python3", "/Users/frederic/tinder-bot/evaluation.py"])
+evaluation_result = subprocess.run(["python3", "/Users/frederic/tinder-bot/evaluation.py"], capture_output=True, text=True)
+print(evaluation_result.stdout)
 
-# Step 6: Notify the user to close the browser manually
-print("Please close the browser manually when you are done.")
+# Parse the evaluation result to determine if the person is beautiful
+is_beautiful = "Image: Belle" in evaluation_result.stdout
+
+# Step 6: Run navigate_tinder.py with the evaluation result
+print(f"Running navigate_tinder.py with is_beautiful={is_beautiful}...")
+subprocess.run(["python3", "/Users/frederic/tinder-bot/navigate_tinder.py", str(is_beautiful)])
+
+# Step 7: Keep the browser open manually
+input("Please close the browser manually when you are done...")
 
 # Clean up the session ready file
 os.remove(session_ready_path)
-print("All steps completed successfully.")

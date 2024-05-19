@@ -1,3 +1,5 @@
+#evaluation.py
+
 import requests
 import time
 
@@ -29,7 +31,7 @@ def analyze_faces(api_key, api_secret, face_tokens):
     response = requests.post(analyze_url, data=analyze_data)
     return response.json()
 
-def is_beautiful(beauty_score, threshold=70):
+def is_beautiful(beauty_score, threshold=65):
     return beauty_score >= threshold
 
 def evaluate_image(api_key, api_secret, image_path, threshold=70):

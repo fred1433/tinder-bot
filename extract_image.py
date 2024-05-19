@@ -1,3 +1,5 @@
+#extract_image.py
+
 import time
 import requests
 from selenium import webdriver
@@ -60,4 +62,5 @@ if __name__ == "__main__":
         print(f"L'image est enregistrée à l'emplacement : {image_path}")
     else:
         print("Échec de l'extraction de l'image.")
-    driver.quit()
+    # Remove the driver.quit() line
+    # driver.quit()
