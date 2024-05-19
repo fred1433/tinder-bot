@@ -44,7 +44,7 @@ while time.time() - start_time < run_duration:
     subprocess.run(["python3", "/Users/frederic/tinder-bot/navigate_tinder.py", str(is_beautiful)])
 
     # Step 8: Wait for 0.5 to 1.5 seconds before the next iteration
-    time.sleep(random.uniform(0.5, 1.5))
+    time.sleep(random.uniform(0.1, 0.3))
 
 # Step 9: Wait for user to close the browser manually
 input("Please close the browser manually when you are done...")

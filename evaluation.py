@@ -34,7 +34,7 @@ def analyze_faces(api_key, api_secret, face_tokens):
 def is_beautiful(beauty_score, threshold=65):
     return beauty_score >= threshold
 
-def evaluate_image(api_key, api_secret, image_path, threshold=70):
+def evaluate_image(api_key, api_secret, image_path, threshold=58):
     print("Evaluating image at:", image_path)
     detect_result = detect_faces(api_key, api_secret, image_path)
     print("Detection result:", detect_result)

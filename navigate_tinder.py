@@ -22,8 +22,7 @@ def attach_to_session(executor_url, session_id):
 
 def navigate(driver, is_beautiful):
     try:
-        # Ajouter un délai aléatoire entre 0.5 et 1.5 secondes
-        delay = random.uniform(0.5, 1.5)
+        delay = random.uniform(0.1, 0.4)
         time.sleep(delay)
 
         body = driver.find_element(By.TAG_NAME, 'body')
