@@ -6,6 +6,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import re
 import pickle
+from PIL import Image
+import io
 
 def attach_to_session(executor_url, session_id):
     original_execute = webdriver.Remote.execute
@@ -36,10 +38,13 @@ def extract_image(driver):
         # Télécharger l'image
         image_response = requests.get(image_url)
         image_path = "/Users/frederic/tinder-bot/profile_image.jpg"  # Spécifiez un chemin complet
-        with open(image_path, 'wb') as file:
-            file.write(image_response.content)
 
-        print(f"Image téléchargée : {image_path}")
+        # Convertir l'image en JPEG
+        image = Image.open(io.BytesIO(image_response.content))
+        image = image.convert("RGB")
+        image.save(image_path, "JPEG")
+
+        print(f"Image téléchargée et convertie en JPEG : {image_path}")
         return image_path
 
     except Exception as e:
@@ -60,5 +65,4 @@ if __name__ == "__main__":
         print(f"L'image est enregistrée à l'emplacement : {image_path}")
     else:
         print("Échec de l'extraction de l'image.")
-    input("Press Enter to close the browser...")
     driver.quit()

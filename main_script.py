@@ -13,15 +13,21 @@ while not os.path.exists(session_ready_path):
     time.sleep(1)
 
 # Step 3: Wait a few more seconds to ensure the browser is fully ready
-time.sleep(10)
+time.sleep(20)
 
 # Step 4: Run extract_image.py
 print("Running extract_image.py...")
 subprocess.run(["python3", "/Users/frederic/tinder-bot/extract_image.py"])
 
-# Step 5: Wait for user to close the browser manually
-input("Press Enter to close the browser manually...")
-open_tinder_process.terminate()
+# Step 5: Run evaluation.py
+print("Running evaluation.py...")
+evaluation_process = subprocess.run(["python3", "/Users/frederic/tinder-bot/evaluation.py"], capture_output=True, text=True)
+print(evaluation_process.stdout)
+print(evaluation_process.stderr)
+
+# Step 6: Wait for user to close the browser manually
+print("Please close the browser manually when you are done.")
+# open_tinder_process.terminate() # Ne pas fermer le navigateur automatiquement
 
 # Clean up the session ready file
 os.remove(session_ready_path)
