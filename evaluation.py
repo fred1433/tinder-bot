@@ -25,7 +25,7 @@ def analyze_faces(api_key, api_secret, face_tokens):
         "return_attributes": "gender,age,beauty"
     }
 
-    time.sleep(2)  # Ajouter une pause de 2 secondes entre les requêtes
+    time.sleep(2)
     response = requests.post(analyze_url, data=analyze_data)
     return response.json()
 
@@ -33,14 +33,13 @@ def is_beautiful(beauty_score, threshold=70):
     return beauty_score >= threshold
 
 def evaluate_image(api_key, api_secret, image_path, threshold=70):
-    print("Starting face detection...")
+    print("Evaluating image at:", image_path)
     detect_result = detect_faces(api_key, api_secret, image_path)
-    print(f"Detection result: {detect_result}")
-    
+    print("Detection result:", detect_result)
     if "faces" in detect_result and detect_result["faces"]:
         face_tokens = [face["face_token"] for face in detect_result["faces"]]
         analyze_result = analyze_faces(api_key, api_secret, face_tokens)
-        print(f"Analyze result: {analyze_result}")
+        print("Analyze result:", analyze_result)
 
         if "faces" in analyze_result:
             for face in analyze_result["faces"]:
@@ -58,8 +57,7 @@ def evaluate_image(api_key, api_secret, image_path, threshold=70):
 if __name__ == "__main__":
     api_key = "D-0FxSRjadOI6gja3opbnwjtxaLWlqKy"
     api_secret = "JceEOYbLxQQnhn1MRgRw7UEu12dS18Uf"
-    image_path = "/Users/frederic/tinder-bot/profile_image.jpg"  # Path to the extracted image
+    image_path = "/Users/frederic/tinder-bot/profile_image.jpg"
 
-    print(f"Evaluating image at: {image_path}")
     result = evaluate_image(api_key, api_secret, image_path)
     print(f"Image: {'Belle' if result['beautiful'] else 'Pas Belle'} (Female Score: {result['female_score']}, Male Score: {result['male_score']})")

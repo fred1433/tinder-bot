@@ -24,22 +24,18 @@ def attach_to_session(executor_url, session_id):
 
 def extract_image(driver):
     try:
-        # Attendre que l'image soit présente
         wait = WebDriverWait(driver, 20)
         print("Waiting for image element...")
         image_element = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@aria-hidden='false']//div[contains(@class, 'Bdrs(8px) Bgz(cv) Bgp(c) StretchedBox')]")))
         print("Image element found.")
         style = image_element.get_attribute('style')
 
-        # Extraire l'URL de l'image de l'attribut style
         image_url = re.search(r'url\("(.*?)"\)', style).group(1)
         print(f"Image URL: {image_url}")
 
-        # Télécharger l'image
         image_response = requests.get(image_url)
-        image_path = "/Users/frederic/tinder-bot/profile_image.jpg"  # Spécifiez un chemin complet
+        image_path = "/Users/frederic/tinder-bot/profile_image.jpg"
 
-        # Convertir l'image en JPEG
         image = Image.open(io.BytesIO(image_response.content))
         image = image.convert("RGB")
         image.save(image_path, "JPEG")
@@ -52,7 +48,6 @@ def extract_image(driver):
         return None
 
 if __name__ == "__main__":
-    # Restaurer la session
     print("Loading session...")
     with open('/Users/frederic/tinder-bot/session.pkl', 'rb') as file:
         session_id = pickle.load(file)
