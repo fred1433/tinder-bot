@@ -48,6 +48,5 @@ if __name__ == "__main__":
     is_beautiful = sys.argv[1].lower() == 'true'
 
     navigate(driver, is_beautiful)
-
-    # Do not quit the driver
+    # Ne pas fermer le driver
     # driver.quit()
