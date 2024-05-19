@@ -1,4 +1,3 @@
-# main_script.py
 import subprocess
 import time
 import os
@@ -13,11 +12,16 @@ session_ready_path = '/Users/frederic/tinder-bot/session_ready.txt'
 while not os.path.exists(session_ready_path):
     time.sleep(1)
 
-# Adding a delay to ensure Tinder is fully loaded
-time.sleep(10)  # Adjust the sleep time if necessary
+# Step 3: Wait a few more seconds to ensure the browser is fully ready
+time.sleep(10)
 
-# Step 3: Run extract_image.py
+# Step 4: Run extract_image.py
 print("Running extract_image.py...")
 subprocess.run(["python3", "/Users/frederic/tinder-bot/extract_image.py"])
 
-print("All tasks completed.")
+# Step 5: Wait for user to close the browser manually
+input("Press Enter to close the browser manually...")
+open_tinder_process.terminate()
+
+# Clean up the session ready file
+os.remove(session_ready_path)

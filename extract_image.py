@@ -1,4 +1,3 @@
-# extract_image.py
 import time
 import requests
 from selenium import webdriver
@@ -24,7 +23,7 @@ def attach_to_session(executor_url, session_id):
 def extract_image(driver):
     try:
         # Attendre que l'image soit présente
-        wait = WebDriverWait(driver, 30)  # Augmenter le délai d'attente pour s'assurer que l'image est chargée
+        wait = WebDriverWait(driver, 20)
         print("Waiting for image element...")
         image_element = wait.until(EC.presence_of_element_located((By.XPATH, "//div[@aria-hidden='false']//div[contains(@class, 'Bdrs(8px) Bgz(cv) Bgp(c) StretchedBox')]")))
         print("Image element found.")
