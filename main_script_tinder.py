@@ -1,5 +1,5 @@
 
-#main_script.py
+#main_script_tinder.py
 
 import subprocess
 import time
@@ -26,9 +26,9 @@ def close_chrome():
     print("Google Chrome est fermé.")
 
 def main():
-    print("Le processus commencera dans 8 secondes.")
+    print("Le processus commencera dans 3 secondes.")
     play_sound("/Users/frederic/tinder-bot/alert_sound.mp3")
-    time.sleep(8)
+    time.sleep(3)
     close_chrome()
 
     print("Running open_tinder.py...")
@@ -48,8 +48,8 @@ def main():
         print("Running extract_image_tinder.py...")
         run_script("/Users/frederic/tinder-bot/extract_image_tinder.py")
 
-        print("Running evaluation.py...")
-        evaluation_result = subprocess.run(["python3", "/Users/frederic/tinder-bot/evaluation.py"], capture_output=True, text=True)
+        print("Running evaluation_tinder.py...")
+        evaluation_result = subprocess.run(["python3", "/Users/frederic/tinder-bot/evaluation_tinder.py"], capture_output=True, text=True)
         print(evaluation_result.stdout)
 
         is_beautiful = "Image: Belle" in evaluation_result.stdout

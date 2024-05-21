@@ -1,5 +1,3 @@
-#evaluation.py
-
 import requests
 import time
 
@@ -59,7 +57,7 @@ def evaluate_image(api_key, api_secret, image_path, threshold=58):
 if __name__ == "__main__":
     api_key = "D-0FxSRjadOI6gja3opbnwjtxaLWlqKy"
     api_secret = "JceEOYbLxQQnhn1MRgRw7UEu12dS18Uf"
-    image_path = "/Users/frederic/tinder-bot/profile_image.jpg"
+    image_path = "/Users/frederic/tinder-bot/profile_image_bumble.jpg"  # Mise à jour pour le chemin de l'image Bumble
 
     result = evaluate_image(api_key, api_secret, image_path)
     print(f"Image: {'Belle' if result['beautiful'] else 'Pas Belle'} (Female Score: {result['female_score']}, Male Score: {result['male_score']})")
