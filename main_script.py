@@ -45,8 +45,8 @@ def main():
     run_duration = random.uniform(20 * 60, 25 * 60)
 
     while time.time() - start_time < run_duration:
-        print("Running extract_image.py...")
-        run_script("/Users/frederic/tinder-bot/extract_image.py")
+        print("Running extract_image_tinder.py...")
+        run_script("/Users/frederic/tinder-bot/extract_image_tinder.py")
 
         print("Running evaluation.py...")
         evaluation_result = subprocess.run(["python3", "/Users/frederic/tinder-bot/evaluation.py"], capture_output=True, text=True)

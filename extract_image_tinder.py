@@ -1,4 +1,4 @@
-#extract_image.py
+#extract_image_tinder.py
 
 import time
 import requests
