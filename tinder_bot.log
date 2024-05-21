@@ -1,127 +1,35 @@
-2024-05-21 12:00:13,935 - INFO - Le processus commencera dans 3 secondes.
-2024-05-21 12:00:19,101 - INFO - Fermeture de Google Chrome...
-2024-05-21 12:00:24,150 - INFO - Google Chrome est fermé.
-2024-05-21 12:00:24,151 - INFO - Running open_bumble.py...
-2024-05-21 12:00:24,160 - INFO - Waiting for session to be ready...
-2024-05-21 12:00:24,161 - INFO - Session is ready. Starting extraction and evaluation process...
-2024-05-21 12:00:34,166 - INFO - Running extract_image_bumble.py...
-2024-05-21 12:00:34,170 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
-2024-05-21 12:00:34,301 - INFO - Loading session...
-Restoring session: b1cad6cc6c2d22a2405ec038594c5135, http://localhost:59781
-Waiting for image element...
-Erreur : HTTPConnectionPool(host='localhost', port=59781): Max retries exceeded with url: /session/b1cad6cc6c2d22a2405ec038594c5135/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1027ee150>: Failed to establish a new connection: [Errno 61] Connection refused'))
-Échec de l'extraction de l'image.
-
-2024-05-21 12:00:34,302 - ERROR - 
-2024-05-21 12:00:34,302 - INFO - Running evaluation_bumble.py...
-2024-05-21 12:00:34,302 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
-2024-05-21 12:00:38,923 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
-Detection result: {'request_id': '1716303636,247d7a34-7c16-459a-a62b-43f43ab34469', 'time_used': 163, 'faces': [{'face_token': '26e2e651d61114e21b617a27b76fdf6f', 'face_rectangle': {'top': 447, 'left': 412, 'width': 227, 'height': 227}, 'attributes': {'facequality': {'value': 91.593, 'threshold': 70.1}}}], 'image_id': 'XHBMRpc5QvH6jPGE1Xqo2g==', 'face_num': 1}
-Analyze result: {'time_used': 99, 'request_id': '1716303638,91351e4d-4177-43e8-940a-ce584325520a', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 63}, 'beauty': {'female_score': 41.16, 'male_score': 41.004}}, 'face_rectangle': {'width': 227, 'top': 447, 'left': 412, 'height': 227}, 'face_token': '26e2e651d61114e21b617a27b76fdf6f'}]}
-Image: Pas Belle (Female Score: 41.16, Male Score: 41.004)
-
-2024-05-21 12:00:38,924 - ERROR - 
-2024-05-21 12:00:38,924 - INFO - Evaluation result: is_beautiful=False
-2024-05-21 12:00:38,924 - INFO - Running navigate_bumble.py with is_beautiful=False...
-2024-05-21 12:00:38,924 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['false']
-2024-05-21 12:00:39,409 - INFO - 
-2024-05-21 12:00:39,410 - ERROR - 2024-05-21 12:00:39,005 - INFO - is_beautiful: False
-2024-05-21 12:00:39,005 - INFO - Loading session...
-2024-05-21 12:00:39,005 - INFO - Restoring session: 66981adc8a31ddb0c1e7925f49bda635, http://localhost:59871
---- Logging error ---
-Traceback (most recent call last):
-  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
-    match_button = WebDriverWait(driver, 5).until(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
-    value = method(self._driver)
-            ^^^^^^^^^^^^^^^^^^^^
-  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
-    return driver.find_element(*locator)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
-    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
-    self.error_handler.check_response(response)
-  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
-  (Session info: chrome=125.0.6422.61)
-Stacktrace:
-0   chromedriver                        0x00000001048424a0 chromedriver + 4301984
-1   chromedriver                        0x000000010483ade8 chromedriver + 4271592
-2   chromedriver                        0x000000010446c19c chromedriver + 278940
-3   chromedriver                        0x000000010447066c chromedriver + 296556
-4   chromedriver                        0x00000001044724e8 chromedriver + 304360
-5   chromedriver                        0x0000000104472560 chromedriver + 304480
-6   chromedriver                        0x00000001044ae3c0 chromedriver + 549824
-7   chromedriver                        0x00000001044e6c5c chromedriver + 781404
-8   chromedriver                        0x00000001044a3004 chromedriver + 503812
-9   chromedriver                        0x00000001044a39ec chromedriver + 506348
-10  chromedriver                        0x000000010480a4e8 chromedriver + 4072680
-11  chromedriver                        0x000000010480ef94 chromedriver + 4091796
-12  chromedriver                        0x00000001047f172c chromedriver + 3970860
-13  chromedriver                        0x000000010480f87c chromedriver + 4094076
-14  chromedriver                        0x00000001047e46ac chromedriver + 3917484
-15  chromedriver                        0x000000010482cae0 chromedriver + 4213472
-16  chromedriver                        0x000000010482cc5c chromedriver + 4213852
-17  chromedriver                        0x000000010483a9e0 chromedriver + 4270560
-18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
-19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
-
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
-    msg = self.format(record)
-          ^^^^^^^^^^^^^^^^^^^
-  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
-    return fmt.format(record)
-           ^^^^^^^^^^^^^^^^^^
-  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
-    record.message = record.getMessage()
-                     ^^^^^^^^^^^^^^^^^^^
-  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
-    msg = msg % self.args
-          ~~~~^~~~~~~~~~~
-TypeError: not all arguments converted during string formatting
-Call stack:
-  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
-    navigate(driver, is_beautiful)
-  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
-    logger.info("No match found or error occurred: ", e)
-Message: 'No match found or error occurred: '
-Arguments: (JavascriptException(),)
-2024-05-21 12:00:39,399 - INFO - Pressed Left Arrow Key.
-
-2024-05-21 12:00:39,692 - INFO - Running extract_image_bumble.py...
-2024-05-21 12:00:39,693 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
-2024-05-21 12:00:39,995 - INFO - Loading session...
-Restoring session: 66981adc8a31ddb0c1e7925f49bda635, http://localhost:59871
+2024-05-21 12:09:59,638 - INFO - Le processus commencera dans 3 secondes.
+2024-05-21 12:10:04,876 - INFO - Fermeture de Google Chrome...
+2024-05-21 12:10:09,917 - INFO - Google Chrome est fermé.
+2024-05-21 12:10:09,919 - INFO - Running open_bumble.py...
+2024-05-21 12:10:09,929 - INFO - Waiting for session to be ready...
+2024-05-21 12:10:50,011 - INFO - Session is ready. Starting extraction and evaluation process...
+2024-05-21 12:11:00,016 - INFO - Running extract_image_bumble.py...
+2024-05-21 12:11:00,017 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-21 12:11:00,645 - INFO - Loading session...
+Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
 Waiting for image element...
 Image element found.
-Image URL: https://us1.ecdn2.bumbcdn.com/p538/hidden?euri=AAAAAAAAAAIQ6KQJfSM..7VWwRJihoeyuwBucT4xIFdDG-82cbUTlhgXOi9kUFeFrz5QnYa6XmmvXMJxW.yHUqkBNjFolrKIWz5QjsXwTcVBHsyGItfCiC7y.XVOgXZVs0wPhWQnT7atrsHcQQPx1UyqrwGOKRhJ0TyV.V1KD0Yb9GQpeRFrnJe06x7fwNvfsrYJvNdgja.Um9x8572f6GIaJBbicJfd&size=__size__&ck=b4530078c66d316082b8edbaf0b3e043&wm_size=72x72&wm_offs=751x1285&h=76P&gs=j&t=42.1.0.0
+Image URL: https://us1.ecdn2.bumbcdn.com/p510/hidden?euri=AAAAAAAAAAIQzw6a0rGJtKbxS1n0Mk8H5wA06JrEwi.ud7PQXuoC7AFEEleIQQPW5aILabCkOvC7C5kzZnkFJRjxVliFecJzUqwdpl6.qqSs6p.sw9qW5XsFmuH6KtHfhpKypW2EPTHkZWoh1LTVNOUuqogx9kMlez07nGJJ8C8usvO1lRX-aMbIaKsFL-go8ylEu7WW6iSXj3n3MRHdgl6g7Iv8Gc6F&size=__size__&ck=ce4563694d4ee02579048bceac07cca6&wm_size=72x72&wm_offs=973x1323&h=fKQ&gs=j&t=42.1.0.0
 Image téléchargée et convertie en JPEG : /Users/frederic/tinder-bot/profile_image_bumble.jpg
 L'image est enregistrée à l'emplacement : /Users/frederic/tinder-bot/profile_image_bumble.jpg
 
-2024-05-21 12:00:39,995 - ERROR - 
-2024-05-21 12:00:39,995 - INFO - Running evaluation_bumble.py...
-2024-05-21 12:00:39,995 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
-2024-05-21 12:00:44,251 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
-Detection result: {'request_id': '1716303641,06ab8ac7-527a-4c74-be62-0b37f11cf0ba', 'time_used': 101, 'faces': [{'face_token': '31e990ed29fcdd4ad7a87aa4538f72f2', 'face_rectangle': {'top': 531, 'left': 370, 'width': 320, 'height': 320}, 'attributes': {'facequality': {'value': 0.006, 'threshold': 70.1}}}], 'image_id': 'UgcWliii1oFeE31hGRoiTQ==', 'face_num': 1}
-Analyze result: {'time_used': 88, 'request_id': '1716303644,03f34161-c82f-46ea-9537-0d3cc4045a5d', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 26}, 'beauty': {'female_score': 50.588, 'male_score': 52.71}}, 'face_rectangle': {'width': 320, 'top': 531, 'left': 370, 'height': 320}, 'face_token': '31e990ed29fcdd4ad7a87aa4538f72f2'}]}
-Image: Pas Belle (Female Score: 50.588, Male Score: 52.71)
+2024-05-21 12:11:00,645 - ERROR - 
+2024-05-21 12:11:00,645 - INFO - Running evaluation_bumble.py...
+2024-05-21 12:11:00,645 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-21 12:11:05,150 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716304262,1af0f199-61b8-43c9-9e47-bc216c40df1c', 'time_used': 168, 'faces': [{'face_token': '8cc7f93b87df3ab64db037afe036bda3', 'face_rectangle': {'top': 442, 'left': 452, 'width': 170, 'height': 170}, 'attributes': {'facequality': {'value': 68.046, 'threshold': 70.1}}}], 'image_id': 'HV+gKXjFofkwimpK/UTo3g==', 'face_num': 1}
+Analyze result: {'time_used': 99, 'request_id': '1716304265,b7f8f8ea-03ca-4ee7-bfbe-b48ec5bdf7cc', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 20}, 'beauty': {'female_score': 70.352, 'male_score': 69.036}}, 'face_rectangle': {'width': 170, 'top': 442, 'left': 452, 'height': 170}, 'face_token': '8cc7f93b87df3ab64db037afe036bda3'}]}
+Image: Belle (Female Score: 70.352, Male Score: 69.036)
 
-2024-05-21 12:00:44,252 - ERROR - 
-2024-05-21 12:00:44,252 - INFO - Evaluation result: is_beautiful=False
-2024-05-21 12:00:44,252 - INFO - Running navigate_bumble.py with is_beautiful=False...
-2024-05-21 12:00:44,252 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['false']
-2024-05-21 12:00:44,595 - INFO - 
-2024-05-21 12:00:44,595 - ERROR - 2024-05-21 12:00:44,334 - INFO - is_beautiful: False
-2024-05-21 12:00:44,334 - INFO - Loading session...
-2024-05-21 12:00:44,335 - INFO - Restoring session: 66981adc8a31ddb0c1e7925f49bda635, http://localhost:59871
+2024-05-21 12:11:05,150 - ERROR - 
+2024-05-21 12:11:05,150 - INFO - Evaluation result: is_beautiful=True
+2024-05-21 12:11:05,150 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-21 12:11:05,150 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-21 12:11:05,553 - INFO - 
+2024-05-21 12:11:05,553 - ERROR - 2024-05-21 12:11:05,236 - INFO - is_beautiful: True
+2024-05-21 12:11:05,237 - INFO - Loading session...
+2024-05-21 12:11:05,237 - INFO - Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
 --- Logging error ---
 Traceback (most recent call last):
   File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
@@ -143,24 +51,24 @@ Traceback (most recent call last):
 selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
   (Session info: chrome=125.0.6422.61)
 Stacktrace:
-0   chromedriver                        0x00000001048424a0 chromedriver + 4301984
-1   chromedriver                        0x000000010483ade8 chromedriver + 4271592
-2   chromedriver                        0x000000010446c19c chromedriver + 278940
-3   chromedriver                        0x000000010447066c chromedriver + 296556
-4   chromedriver                        0x00000001044724e8 chromedriver + 304360
-5   chromedriver                        0x0000000104472560 chromedriver + 304480
-6   chromedriver                        0x00000001044ae3c0 chromedriver + 549824
-7   chromedriver                        0x00000001044e6c5c chromedriver + 781404
-8   chromedriver                        0x00000001044a3004 chromedriver + 503812
-9   chromedriver                        0x00000001044a39ec chromedriver + 506348
-10  chromedriver                        0x000000010480a4e8 chromedriver + 4072680
-11  chromedriver                        0x000000010480ef94 chromedriver + 4091796
-12  chromedriver                        0x00000001047f172c chromedriver + 3970860
-13  chromedriver                        0x000000010480f87c chromedriver + 4094076
-14  chromedriver                        0x00000001047e46ac chromedriver + 3917484
-15  chromedriver                        0x000000010482cae0 chromedriver + 4213472
-16  chromedriver                        0x000000010482cc5c chromedriver + 4213852
-17  chromedriver                        0x000000010483a9e0 chromedriver + 4270560
+0   chromedriver                        0x0000000102e0e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000102e06de8 chromedriver + 4271592
+2   chromedriver                        0x0000000102a3819c chromedriver + 278940
+3   chromedriver                        0x0000000102a3c66c chromedriver + 296556
+4   chromedriver                        0x0000000102a3e4e8 chromedriver + 304360
+5   chromedriver                        0x0000000102a3e560 chromedriver + 304480
+6   chromedriver                        0x0000000102a7a3c0 chromedriver + 549824
+7   chromedriver                        0x0000000102ab2c5c chromedriver + 781404
+8   chromedriver                        0x0000000102a6f004 chromedriver + 503812
+9   chromedriver                        0x0000000102a6f9ec chromedriver + 506348
+10  chromedriver                        0x0000000102dd64e8 chromedriver + 4072680
+11  chromedriver                        0x0000000102ddaf94 chromedriver + 4091796
+12  chromedriver                        0x0000000102dbd72c chromedriver + 3970860
+13  chromedriver                        0x0000000102ddb87c chromedriver + 4094076
+14  chromedriver                        0x0000000102db06ac chromedriver + 3917484
+15  chromedriver                        0x0000000102df8ae0 chromedriver + 4213472
+16  chromedriver                        0x0000000102df8c5c chromedriver + 4213852
+17  chromedriver                        0x0000000102e069e0 chromedriver + 4270560
 18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
 19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
 
@@ -188,34 +96,34 @@ Call stack:
     logger.info("No match found or error occurred: ", e)
 Message: 'No match found or error occurred: '
 Arguments: (JavascriptException(),)
-2024-05-21 12:00:44,583 - INFO - Pressed Left Arrow Key.
+2024-05-21 12:11:05,541 - INFO - Pressed Right Arrow Key.
 
-2024-05-21 12:00:44,896 - INFO - Running extract_image_bumble.py...
-2024-05-21 12:00:44,896 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
-2024-05-21 12:00:45,683 - INFO - Loading session...
-Restoring session: 66981adc8a31ddb0c1e7925f49bda635, http://localhost:59871
+2024-05-21 12:11:05,770 - INFO - Running extract_image_bumble.py...
+2024-05-21 12:11:05,770 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-21 12:11:06,354 - INFO - Loading session...
+Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
 Waiting for image element...
 Image element found.
-Image URL: https://us1.ecdn2.bumbcdn.com/p539/hidden?euri=AAAAAAAAAAIQciOhwGlZeVHXV.5svZz6yQBVPf0Ohe6EaqjToKxzwEsxE7Lw8NO5vM-gT6t7ESU.24fLuTfKo151W794jleT7PVcRU9PT-7Q3a2nL6KBkomh4ZaIeNLCIRb-Br7Ib2oNnsValFazYAgrh1C6C7PBg28y726GL8q7wCv4uQU4i5dLvZgxLVPUbiF7TctWIDcqEFmjLUCi5Lta7JMHt5lI&size=__size__&ck=c533e6f84a1060b041723ae012b40282&wm_size=72x72&wm_offs=973x1323&h=QU8&gs=j&t=42.1.0.0
+Image URL: https://us1.ecdn2.bumbcdn.com/p541/hidden?euri=AAAAAAAAAAIQa96sNqx27Utsccm1rNIlGABTrMHNcAMl-IbbPWINtHIiXA4tUD.EaXnso9-QF16.J7ZTjNyLInDEqvGI5oDZ2886ygzc4qSaaun7gDb43dd1nqE3VmtT-nT6LIO6AvqjVAOl.TTBqy-6H9dVq-769gFf4nkok33RfFVZ.5uiLOK1Sa0l3AkKJlMJxlj-NdRqPHsoGYvZpLB9pt1dY7ut&size=__size__&ck=5cb7267f3712a1752965f6d19f53f0d9&wm_size=72x72&wm_offs=973x1124&h=aKL&gs=j&t=42.1.0.0
 Image téléchargée et convertie en JPEG : /Users/frederic/tinder-bot/profile_image_bumble.jpg
 L'image est enregistrée à l'emplacement : /Users/frederic/tinder-bot/profile_image_bumble.jpg
 
-2024-05-21 12:00:45,683 - ERROR - 
-2024-05-21 12:00:45,683 - INFO - Running evaluation_bumble.py...
-2024-05-21 12:00:45,683 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
-2024-05-21 12:00:50,149 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
-Detection result: {'request_id': '1716303647,2d528680-059d-4d7f-9e3a-49154616cd81', 'time_used': 154, 'faces': [{'face_token': 'a8c25866f793247d3117a89e0aa5caa6', 'face_rectangle': {'top': 735, 'left': 654, 'width': 39, 'height': 39}, 'attributes': {'facequality': {'value': 83.433, 'threshold': 70.1}}}], 'image_id': 'tdR4Yv+7/jgiATplQNpn4w==', 'face_num': 1}
-Analyze result: {'time_used': 97, 'request_id': '1716303650,8ec2e691-73bd-47d7-aa0c-51159accbdfd', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 32}, 'beauty': {'female_score': 42.363, 'male_score': 37.079}}, 'face_rectangle': {'width': 39, 'top': 735, 'left': 654, 'height': 39}, 'face_token': 'a8c25866f793247d3117a89e0aa5caa6'}]}
-Image: Pas Belle (Female Score: 42.363, Male Score: 37.079)
+2024-05-21 12:11:06,354 - ERROR - 
+2024-05-21 12:11:06,354 - INFO - Running evaluation_bumble.py...
+2024-05-21 12:11:06,354 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-21 12:11:10,631 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716304267,2e7271dd-18dc-48a9-818f-e1b7799e555d', 'time_used': 116, 'faces': [{'face_token': 'dc3639aa7c721d096ab1ed363482257d', 'face_rectangle': {'top': 145, 'left': 539, 'width': 123, 'height': 123}, 'attributes': {'facequality': {'value': 74.756, 'threshold': 70.1}}}], 'image_id': '/VLZWw5+Nd8J8oyawbP57w==', 'face_num': 1}
+Analyze result: {'time_used': 95, 'request_id': '1716304270,d8190de6-6a32-4de3-9c2f-39a65cf257f8', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 23}, 'beauty': {'female_score': 38.71, 'male_score': 35.057}}, 'face_rectangle': {'width': 123, 'top': 145, 'left': 539, 'height': 123}, 'face_token': 'dc3639aa7c721d096ab1ed363482257d'}]}
+Image: Pas Belle (Female Score: 38.71, Male Score: 35.057)
 
-2024-05-21 12:00:50,151 - ERROR - 
-2024-05-21 12:00:50,151 - INFO - Evaluation result: is_beautiful=False
-2024-05-21 12:00:50,151 - INFO - Running navigate_bumble.py with is_beautiful=False...
-2024-05-21 12:00:50,151 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['false']
-2024-05-21 12:00:50,595 - INFO - 
-2024-05-21 12:00:50,595 - ERROR - 2024-05-21 12:00:50,230 - INFO - is_beautiful: False
-2024-05-21 12:00:50,230 - INFO - Loading session...
-2024-05-21 12:00:50,230 - INFO - Restoring session: 66981adc8a31ddb0c1e7925f49bda635, http://localhost:59871
+2024-05-21 12:11:10,631 - ERROR - 
+2024-05-21 12:11:10,631 - INFO - Evaluation result: is_beautiful=False
+2024-05-21 12:11:10,631 - INFO - Running navigate_bumble.py with is_beautiful=False...
+2024-05-21 12:11:10,631 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['false']
+2024-05-21 12:11:10,943 - INFO - 
+2024-05-21 12:11:10,943 - ERROR - 2024-05-21 12:11:10,711 - INFO - is_beautiful: False
+2024-05-21 12:11:10,711 - INFO - Loading session...
+2024-05-21 12:11:10,711 - INFO - Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
 --- Logging error ---
 Traceback (most recent call last):
   File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
@@ -237,24 +145,24 @@ Traceback (most recent call last):
 selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
   (Session info: chrome=125.0.6422.61)
 Stacktrace:
-0   chromedriver                        0x00000001048424a0 chromedriver + 4301984
-1   chromedriver                        0x000000010483ade8 chromedriver + 4271592
-2   chromedriver                        0x000000010446c19c chromedriver + 278940
-3   chromedriver                        0x000000010447066c chromedriver + 296556
-4   chromedriver                        0x00000001044724e8 chromedriver + 304360
-5   chromedriver                        0x0000000104472560 chromedriver + 304480
-6   chromedriver                        0x00000001044ae3c0 chromedriver + 549824
-7   chromedriver                        0x00000001044e6c5c chromedriver + 781404
-8   chromedriver                        0x00000001044a3004 chromedriver + 503812
-9   chromedriver                        0x00000001044a39ec chromedriver + 506348
-10  chromedriver                        0x000000010480a4e8 chromedriver + 4072680
-11  chromedriver                        0x000000010480ef94 chromedriver + 4091796
-12  chromedriver                        0x00000001047f172c chromedriver + 3970860
-13  chromedriver                        0x000000010480f87c chromedriver + 4094076
-14  chromedriver                        0x00000001047e46ac chromedriver + 3917484
-15  chromedriver                        0x000000010482cae0 chromedriver + 4213472
-16  chromedriver                        0x000000010482cc5c chromedriver + 4213852
-17  chromedriver                        0x000000010483a9e0 chromedriver + 4270560
+0   chromedriver                        0x0000000102e0e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000102e06de8 chromedriver + 4271592
+2   chromedriver                        0x0000000102a3819c chromedriver + 278940
+3   chromedriver                        0x0000000102a3c66c chromedriver + 296556
+4   chromedriver                        0x0000000102a3e4e8 chromedriver + 304360
+5   chromedriver                        0x0000000102a3e560 chromedriver + 304480
+6   chromedriver                        0x0000000102a7a3c0 chromedriver + 549824
+7   chromedriver                        0x0000000102ab2c5c chromedriver + 781404
+8   chromedriver                        0x0000000102a6f004 chromedriver + 503812
+9   chromedriver                        0x0000000102a6f9ec chromedriver + 506348
+10  chromedriver                        0x0000000102dd64e8 chromedriver + 4072680
+11  chromedriver                        0x0000000102ddaf94 chromedriver + 4091796
+12  chromedriver                        0x0000000102dbd72c chromedriver + 3970860
+13  chromedriver                        0x0000000102ddb87c chromedriver + 4094076
+14  chromedriver                        0x0000000102db06ac chromedriver + 3917484
+15  chromedriver                        0x0000000102df8ae0 chromedriver + 4213472
+16  chromedriver                        0x0000000102df8c5c chromedriver + 4213852
+17  chromedriver                        0x0000000102e069e0 chromedriver + 4270560
 18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
 19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
 
@@ -282,34 +190,34 @@ Call stack:
     logger.info("No match found or error occurred: ", e)
 Message: 'No match found or error occurred: '
 Arguments: (JavascriptException(),)
-2024-05-21 12:00:50,585 - INFO - Pressed Left Arrow Key.
+2024-05-21 12:11:10,925 - INFO - Pressed Left Arrow Key.
 
-2024-05-21 12:00:50,866 - INFO - Running extract_image_bumble.py...
-2024-05-21 12:00:50,866 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
-2024-05-21 12:00:51,537 - INFO - Loading session...
-Restoring session: 66981adc8a31ddb0c1e7925f49bda635, http://localhost:59871
+2024-05-21 12:11:11,161 - INFO - Running extract_image_bumble.py...
+2024-05-21 12:11:11,161 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-21 12:11:11,619 - INFO - Loading session...
+Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
 Waiting for image element...
 Image element found.
-Image URL: https://us1.ecdn2.bumbcdn.com/p564/hidden?euri=AAAAAAAAAAIQoIoKad5lDKgOxbur9U94IwAO88y0XomBePy8OZtvmAJ1c0xyWpOQxu9GY2qAUUMXu8Ui289.2ooO5mJzZlUrO8GufR3Bkw85L9SMXLyfpO2GpWNHoPHRw-uh5-Xvr5Hv7gGQLYH34BqOE83P8-V48Joz1wxNb858lU.XXbYJHVPMqzkduTNnyagssMddZcXP8al-JjdYkNc9JKwzzIUf&size=__size__&ck=5019b803a0eaec99f90cf5b7241210cc&wm_size=72x72&wm_offs=973x1125&h=_gH&gs=j&t=42.1.0.0
+Image URL: https://us1.ecdn2.bumbcdn.com/p514/hidden?euri=AAAAAAAAAAIQdUS.Pex9AG7jjDYDBoqhsAAHCF904yAOie-tUWxotlgLTiWJbMNXgg21QGX2w5z3Jr3UEZXFhozX8y8xKoaXLaQi9gn.AWp2p3VgdIOgZOVrgDNjijcRRJpa67EjX675BVSWc1nxgoBbbln-5hiNwnGNXlNYegLDnnEvoHiWY-PV1yGzbm.k..C38U0uDhBpFUwvUUQvHABbRgzrJjju&size=__size__&ck=0e7c2ccc756e43498217fb560aeacc63&wm_size=72x72&wm_offs=781x1066&h=MHG&gs=j&t=42.1.0.0
 Image téléchargée et convertie en JPEG : /Users/frederic/tinder-bot/profile_image_bumble.jpg
 L'image est enregistrée à l'emplacement : /Users/frederic/tinder-bot/profile_image_bumble.jpg
 
-2024-05-21 12:00:51,537 - ERROR - 
-2024-05-21 12:00:51,537 - INFO - Running evaluation_bumble.py...
-2024-05-21 12:00:51,537 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
-2024-05-21 12:00:55,805 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
-Detection result: {'request_id': '1716303653,f70ded1f-7aac-45bc-8d73-8334e1c9a7d6', 'time_used': 125, 'faces': [{'face_token': '89c3ad1396256b5010ebdf5f6bbaec38', 'face_rectangle': {'top': 302, 'left': 157, 'width': 385, 'height': 385}, 'attributes': {'facequality': {'value': 3.956, 'threshold': 70.1}}}], 'image_id': 'ofY11i+2vvi5R0hO26nq8Q==', 'face_num': 1}
-Analyze result: {'time_used': 94, 'request_id': '1716303655,04de84a9-615b-4e8b-8980-f8ff73b86664', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 21}, 'beauty': {'female_score': 78.033, 'male_score': 77.33}}, 'face_rectangle': {'width': 385, 'top': 302, 'left': 157, 'height': 385}, 'face_token': '89c3ad1396256b5010ebdf5f6bbaec38'}]}
-Image: Belle (Female Score: 78.033, Male Score: 77.33)
+2024-05-21 12:11:11,619 - ERROR - 
+2024-05-21 12:11:11,619 - INFO - Running evaluation_bumble.py...
+2024-05-21 12:11:11,619 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-21 12:11:15,716 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716304273,d5dc6ef5-02d7-412c-9655-7c69fe7c9960', 'time_used': 86, 'faces': [{'face_token': '9668e73d51d35fb49bdee3c7f04876ec', 'face_rectangle': {'top': 182, 'left': 341, 'width': 155, 'height': 155}, 'attributes': {'facequality': {'value': 88.801, 'threshold': 70.1}}}], 'image_id': '/0PRSPwZkl+uUrUcezRxEw==', 'face_num': 1}
+Analyze result: {'time_used': 97, 'request_id': '1716304275,a7a62555-8bcd-45f7-9b2a-08e3d86fb502', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 41}, 'beauty': {'female_score': 45.074, 'male_score': 48.63}}, 'face_rectangle': {'width': 155, 'top': 182, 'left': 341, 'height': 155}, 'face_token': '9668e73d51d35fb49bdee3c7f04876ec'}]}
+Image: Pas Belle (Female Score: 45.074, Male Score: 48.63)
 
-2024-05-21 12:00:55,805 - ERROR - 
-2024-05-21 12:00:55,805 - INFO - Evaluation result: is_beautiful=True
-2024-05-21 12:00:55,805 - INFO - Running navigate_bumble.py with is_beautiful=True...
-2024-05-21 12:00:55,805 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
-2024-05-21 12:00:56,331 - INFO - 
-2024-05-21 12:00:56,331 - ERROR - 2024-05-21 12:00:55,923 - INFO - is_beautiful: True
-2024-05-21 12:00:55,923 - INFO - Loading session...
-2024-05-21 12:00:55,923 - INFO - Restoring session: 66981adc8a31ddb0c1e7925f49bda635, http://localhost:59871
+2024-05-21 12:11:15,716 - ERROR - 
+2024-05-21 12:11:15,716 - INFO - Evaluation result: is_beautiful=False
+2024-05-21 12:11:15,716 - INFO - Running navigate_bumble.py with is_beautiful=False...
+2024-05-21 12:11:15,716 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['false']
+2024-05-21 12:11:16,235 - INFO - 
+2024-05-21 12:11:16,236 - ERROR - 2024-05-21 12:11:15,795 - INFO - is_beautiful: False
+2024-05-21 12:11:15,795 - INFO - Loading session...
+2024-05-21 12:11:15,795 - INFO - Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
 --- Logging error ---
 Traceback (most recent call last):
   File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
@@ -331,24 +239,24 @@ Traceback (most recent call last):
 selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
   (Session info: chrome=125.0.6422.61)
 Stacktrace:
-0   chromedriver                        0x00000001048424a0 chromedriver + 4301984
-1   chromedriver                        0x000000010483ade8 chromedriver + 4271592
-2   chromedriver                        0x000000010446c19c chromedriver + 278940
-3   chromedriver                        0x000000010447066c chromedriver + 296556
-4   chromedriver                        0x00000001044724e8 chromedriver + 304360
-5   chromedriver                        0x0000000104472560 chromedriver + 304480
-6   chromedriver                        0x00000001044ae3c0 chromedriver + 549824
-7   chromedriver                        0x00000001044e6c5c chromedriver + 781404
-8   chromedriver                        0x00000001044a3004 chromedriver + 503812
-9   chromedriver                        0x00000001044a39ec chromedriver + 506348
-10  chromedriver                        0x000000010480a4e8 chromedriver + 4072680
-11  chromedriver                        0x000000010480ef94 chromedriver + 4091796
-12  chromedriver                        0x00000001047f172c chromedriver + 3970860
-13  chromedriver                        0x000000010480f87c chromedriver + 4094076
-14  chromedriver                        0x00000001047e46ac chromedriver + 3917484
-15  chromedriver                        0x000000010482cae0 chromedriver + 4213472
-16  chromedriver                        0x000000010482cc5c chromedriver + 4213852
-17  chromedriver                        0x000000010483a9e0 chromedriver + 4270560
+0   chromedriver                        0x0000000102e0e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000102e06de8 chromedriver + 4271592
+2   chromedriver                        0x0000000102a3819c chromedriver + 278940
+3   chromedriver                        0x0000000102a3c66c chromedriver + 296556
+4   chromedriver                        0x0000000102a3e4e8 chromedriver + 304360
+5   chromedriver                        0x0000000102a3e560 chromedriver + 304480
+6   chromedriver                        0x0000000102a7a3c0 chromedriver + 549824
+7   chromedriver                        0x0000000102ab2c5c chromedriver + 781404
+8   chromedriver                        0x0000000102a6f004 chromedriver + 503812
+9   chromedriver                        0x0000000102a6f9ec chromedriver + 506348
+10  chromedriver                        0x0000000102dd64e8 chromedriver + 4072680
+11  chromedriver                        0x0000000102ddaf94 chromedriver + 4091796
+12  chromedriver                        0x0000000102dbd72c chromedriver + 3970860
+13  chromedriver                        0x0000000102ddb87c chromedriver + 4094076
+14  chromedriver                        0x0000000102db06ac chromedriver + 3917484
+15  chromedriver                        0x0000000102df8ae0 chromedriver + 4213472
+16  chromedriver                        0x0000000102df8c5c chromedriver + 4213852
+17  chromedriver                        0x0000000102e069e0 chromedriver + 4270560
 18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
 19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
 
@@ -376,34 +284,34 @@ Call stack:
     logger.info("No match found or error occurred: ", e)
 Message: 'No match found or error occurred: '
 Arguments: (JavascriptException(),)
-2024-05-21 12:00:56,318 - INFO - Pressed Right Arrow Key.
+2024-05-21 12:11:16,225 - INFO - Pressed Left Arrow Key.
 
-2024-05-21 12:00:56,570 - INFO - Running extract_image_bumble.py...
-2024-05-21 12:00:56,570 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
-2024-05-21 12:00:56,814 - INFO - Loading session...
-Restoring session: 66981adc8a31ddb0c1e7925f49bda635, http://localhost:59871
+2024-05-21 12:11:16,520 - INFO - Running extract_image_bumble.py...
+2024-05-21 12:11:16,520 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-21 12:11:17,213 - INFO - Loading session...
+Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
 Waiting for image element...
 Image element found.
-Image URL: https://us1.ecdn2.bumbcdn.com/p573/hidden?euri=AAAAAAAAAAIQkIGVY7339gZNtK4OjEvdzgDPZYOSU.t6T3yOb4EP9UMzACAsDwmVXUhVZY3N5SCGyalhCOHfzaP4Q23OgD28lJU7r2RYuS49nMqhIgQ6VNpROgjKDVoy7WpNpmnpWpFfwJhV-V3SQ88E1YRHpWuc7NBkWXSvtUmddvc3DzF4KTtgMMdWfNzrzdI7A9ERH1ikc5ptLXfM935X0gSAKH7H&size=__size__&ck=311bd29c37abf842776350337fc93b87&wm_size=72x72&wm_offs=751x1028&h=ad6&gs=j&t=42.1.0.0
+Image URL: https://us1.ecdn2.bumbcdn.com/p509/hidden?euri=AAAAAAAAAAIQ3701sGoh9LpKvOyLygo5NAC0myVuUQAwmCxNiO5aB-ZiVUHiRIurwpAKfv2La6A9EsUJ9rPzk82ReF5U.FFePXZGPdoh..eBRLUnM5iXQhAF3ZhNhVbIRv3d3E0MRKAWZT6R1lQ7QDc4Gh.2RRtNF1CtrxTGl79QBnXP64kh1i.32WY.WdLKosthYx9UvbVSRyO7Qhrt0zCIsxfKZEo-&size=__size__&ck=263ccf7962df86bcb15541d71f27f516&wm_size=72x72&wm_offs=973x1125&h=kvk&gs=j&t=42.1.0.0
 Image téléchargée et convertie en JPEG : /Users/frederic/tinder-bot/profile_image_bumble.jpg
 L'image est enregistrée à l'emplacement : /Users/frederic/tinder-bot/profile_image_bumble.jpg
 
-2024-05-21 12:00:56,814 - ERROR - 
-2024-05-21 12:00:56,814 - INFO - Running evaluation_bumble.py...
-2024-05-21 12:00:56,814 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
-2024-05-21 12:01:00,958 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
-Detection result: {'request_id': '1716303658,935a65fb-0b6b-4fda-84c6-26551e970775', 'time_used': 93, 'faces': [{'face_token': 'a64264658fb53f7ead4fe497eab0e033', 'face_rectangle': {'top': 267, 'left': 198, 'width': 379, 'height': 379}, 'attributes': {'facequality': {'value': 92.232, 'threshold': 70.1}}}], 'image_id': 'BeK2xdJ/Nmn65MbTIn4Ivg==', 'face_num': 1}
-Analyze result: {'time_used': 89, 'request_id': '1716303661,4efb202b-f67b-4364-b27c-5d0e54271efc', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 32}, 'beauty': {'female_score': 63.057, 'male_score': 63.818}}, 'face_rectangle': {'width': 379, 'top': 267, 'left': 198, 'height': 379}, 'face_token': 'a64264658fb53f7ead4fe497eab0e033'}]}
-Image: Belle (Female Score: 63.057, Male Score: 63.818)
+2024-05-21 12:11:17,213 - ERROR - 
+2024-05-21 12:11:17,213 - INFO - Running evaluation_bumble.py...
+2024-05-21 12:11:17,213 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-21 12:11:21,335 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716304278,b3496c2b-d545-4895-9f81-c055b1bea15e', 'time_used': 166, 'faces': [{'face_token': '609c31b7772968934656734f781ef23a', 'face_rectangle': {'top': 208, 'left': 362, 'width': 318, 'height': 318}, 'attributes': {'facequality': {'value': 54.826, 'threshold': 70.1}}}], 'image_id': 'HJeuLSQ7Wp77/Zz8DLzlnw==', 'face_num': 1}
+Analyze result: {'time_used': 98, 'request_id': '1716304281,b31b37de-025f-4301-bffc-57f82bb0f944', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 51}, 'beauty': {'female_score': 34.315, 'male_score': 36.842}}, 'face_rectangle': {'width': 318, 'top': 208, 'left': 362, 'height': 318}, 'face_token': '609c31b7772968934656734f781ef23a'}]}
+Image: Pas Belle (Female Score: 34.315, Male Score: 36.842)
 
-2024-05-21 12:01:00,958 - ERROR - 
-2024-05-21 12:01:00,958 - INFO - Evaluation result: is_beautiful=True
-2024-05-21 12:01:00,958 - INFO - Running navigate_bumble.py with is_beautiful=True...
-2024-05-21 12:01:00,958 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
-2024-05-21 12:01:01,322 - INFO - 
-2024-05-21 12:01:01,325 - ERROR - 2024-05-21 12:01:01,049 - INFO - is_beautiful: True
-2024-05-21 12:01:01,049 - INFO - Loading session...
-2024-05-21 12:01:01,049 - INFO - Restoring session: 66981adc8a31ddb0c1e7925f49bda635, http://localhost:59871
+2024-05-21 12:11:21,336 - ERROR - 
+2024-05-21 12:11:21,336 - INFO - Evaluation result: is_beautiful=False
+2024-05-21 12:11:21,336 - INFO - Running navigate_bumble.py with is_beautiful=False...
+2024-05-21 12:11:21,336 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['false']
+2024-05-21 12:11:21,846 - INFO - 
+2024-05-21 12:11:21,846 - ERROR - 2024-05-21 12:11:21,415 - INFO - is_beautiful: False
+2024-05-21 12:11:21,416 - INFO - Loading session...
+2024-05-21 12:11:21,416 - INFO - Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
 --- Logging error ---
 Traceback (most recent call last):
   File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
@@ -425,24 +333,24 @@ Traceback (most recent call last):
 selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
   (Session info: chrome=125.0.6422.61)
 Stacktrace:
-0   chromedriver                        0x00000001048424a0 chromedriver + 4301984
-1   chromedriver                        0x000000010483ade8 chromedriver + 4271592
-2   chromedriver                        0x000000010446c19c chromedriver + 278940
-3   chromedriver                        0x000000010447066c chromedriver + 296556
-4   chromedriver                        0x00000001044724e8 chromedriver + 304360
-5   chromedriver                        0x0000000104472560 chromedriver + 304480
-6   chromedriver                        0x00000001044ae3c0 chromedriver + 549824
-7   chromedriver                        0x00000001044e6c5c chromedriver + 781404
-8   chromedriver                        0x00000001044a3004 chromedriver + 503812
-9   chromedriver                        0x00000001044a39ec chromedriver + 506348
-10  chromedriver                        0x000000010480a4e8 chromedriver + 4072680
-11  chromedriver                        0x000000010480ef94 chromedriver + 4091796
-12  chromedriver                        0x00000001047f172c chromedriver + 3970860
-13  chromedriver                        0x000000010480f87c chromedriver + 4094076
-14  chromedriver                        0x00000001047e46ac chromedriver + 3917484
-15  chromedriver                        0x000000010482cae0 chromedriver + 4213472
-16  chromedriver                        0x000000010482cc5c chromedriver + 4213852
-17  chromedriver                        0x000000010483a9e0 chromedriver + 4270560
+0   chromedriver                        0x0000000102e0e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000102e06de8 chromedriver + 4271592
+2   chromedriver                        0x0000000102a3819c chromedriver + 278940
+3   chromedriver                        0x0000000102a3c66c chromedriver + 296556
+4   chromedriver                        0x0000000102a3e4e8 chromedriver + 304360
+5   chromedriver                        0x0000000102a3e560 chromedriver + 304480
+6   chromedriver                        0x0000000102a7a3c0 chromedriver + 549824
+7   chromedriver                        0x0000000102ab2c5c chromedriver + 781404
+8   chromedriver                        0x0000000102a6f004 chromedriver + 503812
+9   chromedriver                        0x0000000102a6f9ec chromedriver + 506348
+10  chromedriver                        0x0000000102dd64e8 chromedriver + 4072680
+11  chromedriver                        0x0000000102ddaf94 chromedriver + 4091796
+12  chromedriver                        0x0000000102dbd72c chromedriver + 3970860
+13  chromedriver                        0x0000000102ddb87c chromedriver + 4094076
+14  chromedriver                        0x0000000102db06ac chromedriver + 3917484
+15  chromedriver                        0x0000000102df8ae0 chromedriver + 4213472
+16  chromedriver                        0x0000000102df8c5c chromedriver + 4213852
+17  chromedriver                        0x0000000102e069e0 chromedriver + 4270560
 18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
 19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
 
@@ -470,34 +378,34 @@ Call stack:
     logger.info("No match found or error occurred: ", e)
 Message: 'No match found or error occurred: '
 Arguments: (JavascriptException(),)
-2024-05-21 12:01:01,311 - INFO - Pressed Right Arrow Key.
+2024-05-21 12:11:21,835 - INFO - Pressed Left Arrow Key.
 
-2024-05-21 12:01:01,587 - INFO - Running extract_image_bumble.py...
-2024-05-21 12:01:01,588 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
-2024-05-21 12:01:01,874 - INFO - Loading session...
-Restoring session: 66981adc8a31ddb0c1e7925f49bda635, http://localhost:59871
+2024-05-21 12:11:22,067 - INFO - Running extract_image_bumble.py...
+2024-05-21 12:11:22,067 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-21 12:11:22,579 - INFO - Loading session...
+Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
 Waiting for image element...
 Image element found.
-Image URL: https://us1.ecdn2.bumbcdn.com/p529/hidden?euri=AAAAAAAAAAIQ5ZMymjMdeTTJi5g-OR8HXQC6mZBHIiVu7kA1GSR6P1WLkinnUVADBDnC1CqYPdGiISSOEJM73Wn.R40mVROdrhUqLD1J90yQM85OB0SmdEdJC6Z3-T-DkrWieK5Ybp4sPbolAzmCtvrOKT2QNfmAwnJn4zRdM0Va-TB.Q0Bg2hLh48Y7xGyVAlxGqXMTBi3oNzwdLP1wZXI.tfGul.9K&size=__size__&ck=745549f7ce36f34557366f74002e4b32&wm_size=72x72&wm_offs=823x953&h=9yN&gs=j&t=42.1.0.0
+Image URL: https://us1.ecdn2.bumbcdn.com/p542/hidden?euri=AAAAAAAAAAIQzmwWgyJsrdozant-9A440AB1SipzOVITzFFLXEErHZXzcW7RbJqXn.Sfk2xGZoYlAdQxtYJ27VcHxF-Qw4A0ay3tj415bQbWlCgyCaXiX.UvhHL7r9nuFcoCU49LA70Ea24RFVrqmaUQ3EI37PuNOGEH577v.KuhX7ZR978AoBVQVGTYdWvXxXY2QG6dUGd5ePgrnN12dybqVP2EZh2F&size=__size__&ck=929717872123b81d3a23a5cb25263c2c&wm_size=72x72&wm_offs=922x1253&h=Q-c&gs=j&t=42.1.0.0
 Image téléchargée et convertie en JPEG : /Users/frederic/tinder-bot/profile_image_bumble.jpg
 L'image est enregistrée à l'emplacement : /Users/frederic/tinder-bot/profile_image_bumble.jpg
 
-2024-05-21 12:01:01,877 - ERROR - 
-2024-05-21 12:01:01,877 - INFO - Running evaluation_bumble.py...
-2024-05-21 12:01:01,877 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
-2024-05-21 12:01:06,364 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
-Detection result: {'request_id': '1716303663,9810b5d7-cd78-4b63-b0fe-d56e0fd24ade', 'time_used': 142, 'faces': [{'face_token': '4a4c2bc7fb508649cc93575bb49681ca', 'face_rectangle': {'top': 226, 'left': 203, 'width': 74, 'height': 74}, 'attributes': {'facequality': {'value': 25.866, 'threshold': 70.1}}}], 'image_id': 'LuiYJSPij/WLo0aQ6B+I8w==', 'face_num': 1}
-Analyze result: {'time_used': 91, 'request_id': '1716303666,84c4cee2-e2b4-45dd-9adb-2b229a70d10e', 'faces': [{'attributes': {'gender': {'value': 'Male'}, 'age': {'value': 50}, 'beauty': {'female_score': 44.369, 'male_score': 48.808}}, 'face_rectangle': {'width': 74, 'top': 226, 'left': 203, 'height': 74}, 'face_token': '4a4c2bc7fb508649cc93575bb49681ca'}]}
-Image: Pas Belle (Female Score: 44.369, Male Score: 48.808)
+2024-05-21 12:11:22,579 - ERROR - 
+2024-05-21 12:11:22,579 - INFO - Running evaluation_bumble.py...
+2024-05-21 12:11:22,579 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-21 12:11:27,060 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716304284,6596ca42-e2db-476b-b265-e61c52ae9c9c', 'time_used': 139, 'faces': [{'face_token': 'bc2e2edcd17b4495f4efb03190a56bcd', 'face_rectangle': {'top': 583, 'left': 607, 'width': 58, 'height': 58}, 'attributes': {'facequality': {'value': 0.006, 'threshold': 70.1}}}, {'face_token': 'edbbef9cf77c9c90121a3503f4959f54', 'face_rectangle': {'top': 556, 'left': 674, 'width': 57, 'height': 57}, 'attributes': {'facequality': {'value': 0.006, 'threshold': 70.1}}}, {'face_token': '5727a4c8491b58c65ba2facde0ed7c21', 'face_rectangle': {'top': 579, 'left': 238, 'width': 48, 'height': 48}, 'attributes': {'facequality': {'value': 0.006, 'threshold': 70.1}}}, {'face_token': '3d20ee1bbf1ba399dca060a9ead99e91', 'face_rectangle': {'top': 690, 'left': 471, 'width': 39, 'height': 39}, 'attributes': {'facequality': {'value': 0.006, 'threshold': 70.1}}}, {'face_token': '5102fbb68a9c2221fe29bf8895dc353b', 'face_rectangle': {'top': 717, 'left': 897, 'width': 36, 'height': 36}, 'attributes': {'facequality': {'value': 0.006, 'threshold': 70.1}}}], 'image_id': 'R76ZoCVoI2XKtY9Tyr3pwQ==', 'face_num': 5}
+Analyze result: {'time_used': 296, 'request_id': '1716304286,40094e95-e932-491b-95db-b6dd9c5287d0', 'faces': [{'attributes': {'gender': {'value': 'Male'}, 'age': {'value': 62}, 'beauty': {'female_score': 46.839, 'male_score': 49.562}}, 'face_rectangle': {'width': 58, 'top': 583, 'left': 607, 'height': 58}, 'face_token': 'bc2e2edcd17b4495f4efb03190a56bcd'}, {'attributes': {'gender': {'value': 'Male'}, 'age': {'value': 52}, 'beauty': {'female_score': 50.513, 'male_score': 54.759}}, 'face_rectangle': {'width': 57, 'top': 556, 'left': 674, 'height': 57}, 'face_token': 'edbbef9cf77c9c90121a3503f4959f54'}, {'attributes': {'gender': {'value': 'Male'}, 'age': {'value': 27}, 'beauty': {'female_score': 52.482, 'male_score': 44.548}}, 'face_rectangle': {'width': 48, 'top': 579, 'left': 238, 'height': 48}, 'face_token': '5727a4c8491b58c65ba2facde0ed7c21'}, {'attributes': {'gender': {'value': 'Male'}, 'age': {'value': 41}, 'beauty': {'female_score': 53.838, 'male_score': 56.939}}, 'face_rectangle': {'width': 39, 'top': 690, 'left': 471, 'height': 39}, 'face_token': '3d20ee1bbf1ba399dca060a9ead99e91'}, {'attributes': {'gender': {'value': 'Male'}, 'age': {'value': 44}, 'beauty': {'female_score': 54.878, 'male_score': 57.055}}, 'face_rectangle': {'width': 36, 'top': 717, 'left': 897, 'height': 36}, 'face_token': '5102fbb68a9c2221fe29bf8895dc353b'}]}
+Image: Pas Belle (Female Score: 46.839, Male Score: 49.562)
 
-2024-05-21 12:01:06,365 - ERROR - 
-2024-05-21 12:01:06,365 - INFO - Evaluation result: is_beautiful=False
-2024-05-21 12:01:06,365 - INFO - Running navigate_bumble.py with is_beautiful=False...
-2024-05-21 12:01:06,365 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['false']
-2024-05-21 12:01:06,676 - INFO - 
-2024-05-21 12:01:06,676 - ERROR - 2024-05-21 12:01:06,444 - INFO - is_beautiful: False
-2024-05-21 12:01:06,444 - INFO - Loading session...
-2024-05-21 12:01:06,444 - INFO - Restoring session: 66981adc8a31ddb0c1e7925f49bda635, http://localhost:59871
+2024-05-21 12:11:27,061 - ERROR - 
+2024-05-21 12:11:27,061 - INFO - Evaluation result: is_beautiful=False
+2024-05-21 12:11:27,061 - INFO - Running navigate_bumble.py with is_beautiful=False...
+2024-05-21 12:11:27,061 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['false']
+2024-05-21 12:11:27,485 - INFO - 
+2024-05-21 12:11:27,485 - ERROR - 2024-05-21 12:11:27,141 - INFO - is_beautiful: False
+2024-05-21 12:11:27,141 - INFO - Loading session...
+2024-05-21 12:11:27,141 - INFO - Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
 --- Logging error ---
 Traceback (most recent call last):
   File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
@@ -519,24 +427,24 @@ Traceback (most recent call last):
 selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
   (Session info: chrome=125.0.6422.61)
 Stacktrace:
-0   chromedriver                        0x00000001048424a0 chromedriver + 4301984
-1   chromedriver                        0x000000010483ade8 chromedriver + 4271592
-2   chromedriver                        0x000000010446c19c chromedriver + 278940
-3   chromedriver                        0x000000010447066c chromedriver + 296556
-4   chromedriver                        0x00000001044724e8 chromedriver + 304360
-5   chromedriver                        0x0000000104472560 chromedriver + 304480
-6   chromedriver                        0x00000001044ae3c0 chromedriver + 549824
-7   chromedriver                        0x00000001044e6c5c chromedriver + 781404
-8   chromedriver                        0x00000001044a3004 chromedriver + 503812
-9   chromedriver                        0x00000001044a39ec chromedriver + 506348
-10  chromedriver                        0x000000010480a4e8 chromedriver + 4072680
-11  chromedriver                        0x000000010480ef94 chromedriver + 4091796
-12  chromedriver                        0x00000001047f172c chromedriver + 3970860
-13  chromedriver                        0x000000010480f87c chromedriver + 4094076
-14  chromedriver                        0x00000001047e46ac chromedriver + 3917484
-15  chromedriver                        0x000000010482cae0 chromedriver + 4213472
-16  chromedriver                        0x000000010482cc5c chromedriver + 4213852
-17  chromedriver                        0x000000010483a9e0 chromedriver + 4270560
+0   chromedriver                        0x0000000102e0e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000102e06de8 chromedriver + 4271592
+2   chromedriver                        0x0000000102a3819c chromedriver + 278940
+3   chromedriver                        0x0000000102a3c66c chromedriver + 296556
+4   chromedriver                        0x0000000102a3e4e8 chromedriver + 304360
+5   chromedriver                        0x0000000102a3e560 chromedriver + 304480
+6   chromedriver                        0x0000000102a7a3c0 chromedriver + 549824
+7   chromedriver                        0x0000000102ab2c5c chromedriver + 781404
+8   chromedriver                        0x0000000102a6f004 chromedriver + 503812
+9   chromedriver                        0x0000000102a6f9ec chromedriver + 506348
+10  chromedriver                        0x0000000102dd64e8 chromedriver + 4072680
+11  chromedriver                        0x0000000102ddaf94 chromedriver + 4091796
+12  chromedriver                        0x0000000102dbd72c chromedriver + 3970860
+13  chromedriver                        0x0000000102ddb87c chromedriver + 4094076
+14  chromedriver                        0x0000000102db06ac chromedriver + 3917484
+15  chromedriver                        0x0000000102df8ae0 chromedriver + 4213472
+16  chromedriver                        0x0000000102df8c5c chromedriver + 4213852
+17  chromedriver                        0x0000000102e069e0 chromedriver + 4270560
 18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
 19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
 
@@ -564,8 +472,488 @@ Call stack:
     logger.info("No match found or error occurred: ", e)
 Message: 'No match found or error occurred: '
 Arguments: (JavascriptException(),)
-2024-05-21 12:01:06,665 - INFO - Pressed Left Arrow Key.
+2024-05-21 12:11:27,464 - INFO - Pressed Left Arrow Key.
 
-2024-05-21 12:01:06,884 - INFO - Terminating the browser...
-2024-05-21 12:01:06,884 - INFO - Browser terminated.
-2024-05-21 12:01:06,884 - INFO - session_ready_bumble.txt removed.
+2024-05-21 12:11:27,713 - INFO - Running extract_image_bumble.py...
+2024-05-21 12:11:27,713 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-21 12:11:28,355 - INFO - Loading session...
+Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
+Waiting for image element...
+Image element found.
+Image URL: https://us1.ecdn2.bumbcdn.com/p576/hidden?euri=AAAAAAAAAAIQythTyDPkUiq.ymlHS4tStAAYoCaHTw9q3bxMeukp7pR00xm2z8Ah.VEkt.PLNPJFsQtjXt-PiUIwMKSi4.351QXemV1Fob1yhjzDGdolc.Np7DxKtGNuhB25mO.ILvnkkvUFYOC.ouKq.89xUa9RODJRgOqdHLYV5iPxZH9rxO7wwYJqM7.zukI5Dar0m.75v4.-4s3pkue6bWI4Qj4Q&size=__size__&ck=6d56d1e17efb6597b318c439b4c66e6c&wm_size=72x72&wm_offs=973x1219&h=2VX&gs=j&t=42.1.0.0
+Image téléchargée et convertie en JPEG : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+L'image est enregistrée à l'emplacement : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+
+2024-05-21 12:11:28,355 - ERROR - 
+2024-05-21 12:11:28,355 - INFO - Running evaluation_bumble.py...
+2024-05-21 12:11:28,355 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-21 12:11:32,652 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716304289,614bbeab-b2c2-4d4e-90d8-30946ca266e2', 'time_used': 148, 'faces': [{'face_token': '7f33929310775d02a21016b0b045e89a', 'face_rectangle': {'top': 299, 'left': 603, 'width': 72, 'height': 72}, 'attributes': {'facequality': {'value': 0.006, 'threshold': 70.1}}}], 'image_id': '00CJse8h3AqNeoCkRsbe2w==', 'face_num': 1}
+Analyze result: {'time_used': 113, 'request_id': '1716304292,26c57248-6c85-4d72-a7ad-6701ecb7a1d2', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 29}, 'beauty': {'female_score': 69.71, 'male_score': 71.077}}, 'face_rectangle': {'width': 72, 'top': 299, 'left': 603, 'height': 72}, 'face_token': '7f33929310775d02a21016b0b045e89a'}]}
+Image: Belle (Female Score: 69.71, Male Score: 71.077)
+
+2024-05-21 12:11:32,653 - ERROR - 
+2024-05-21 12:11:32,653 - INFO - Evaluation result: is_beautiful=True
+2024-05-21 12:11:32,653 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-21 12:11:32,653 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-21 12:11:33,204 - INFO - 
+2024-05-21 12:11:33,205 - ERROR - 2024-05-21 12:11:32,733 - INFO - is_beautiful: True
+2024-05-21 12:11:32,733 - INFO - Loading session...
+2024-05-21 12:11:32,733 - INFO - Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x0000000102e0e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000102e06de8 chromedriver + 4271592
+2   chromedriver                        0x0000000102a3819c chromedriver + 278940
+3   chromedriver                        0x0000000102a3c66c chromedriver + 296556
+4   chromedriver                        0x0000000102a3e4e8 chromedriver + 304360
+5   chromedriver                        0x0000000102a3e560 chromedriver + 304480
+6   chromedriver                        0x0000000102a7a3c0 chromedriver + 549824
+7   chromedriver                        0x0000000102ab2c5c chromedriver + 781404
+8   chromedriver                        0x0000000102a6f004 chromedriver + 503812
+9   chromedriver                        0x0000000102a6f9ec chromedriver + 506348
+10  chromedriver                        0x0000000102dd64e8 chromedriver + 4072680
+11  chromedriver                        0x0000000102ddaf94 chromedriver + 4091796
+12  chromedriver                        0x0000000102dbd72c chromedriver + 3970860
+13  chromedriver                        0x0000000102ddb87c chromedriver + 4094076
+14  chromedriver                        0x0000000102db06ac chromedriver + 3917484
+15  chromedriver                        0x0000000102df8ae0 chromedriver + 4213472
+16  chromedriver                        0x0000000102df8c5c chromedriver + 4213852
+17  chromedriver                        0x0000000102e069e0 chromedriver + 4270560
+18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (JavascriptException(),)
+2024-05-21 12:11:33,194 - INFO - Pressed Right Arrow Key.
+
+2024-05-21 12:11:33,476 - INFO - Running extract_image_bumble.py...
+2024-05-21 12:11:33,476 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-21 12:11:34,238 - INFO - Loading session...
+Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
+Waiting for image element...
+Image element found.
+Image URL: https://us1.ecdn2.bumbcdn.com/p549/hidden?euri=AAAAAAAAAAIQTGUG3LNc5iYoWKnKZl-W0gAGEklVBvyS1MDJl6ENQrcoGIbTdNoKySgSWp7gnBlMxsA7kebWwqDFRIhEO2JtuJnV8hSziG4V.dBBjTuvGcJpI8smh6iSlWlxnL9pRS52HACXz7siTOlwyfOkD8Pyv4.kwbqpy9v89wLM5eoNiWWGZDz9iO5c0ICG3.VRB3kuxoWG80lhxBFnCXujuOvI&size=__size__&ck=b5b9bd4a4a841e29d744e099cce1fddb&wm_size=72x72&wm_offs=973x1124&h=Uhc&gs=j&t=42.1.0.0
+Image téléchargée et convertie en JPEG : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+L'image est enregistrée à l'emplacement : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+
+2024-05-21 12:11:34,239 - ERROR - 
+2024-05-21 12:11:34,239 - INFO - Running evaluation_bumble.py...
+2024-05-21 12:11:34,239 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-21 12:11:38,675 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716304295,507bfe92-1d5c-4a55-b9c1-beb2fa8c1cf1', 'time_used': 129, 'faces': [{'face_token': '591edda6d8292f2f193716789cdc99ee', 'face_rectangle': {'top': 161, 'left': 498, 'width': 150, 'height': 150}, 'attributes': {'facequality': {'value': 0.006, 'threshold': 70.1}}}], 'image_id': 'siyorAH+dRegcskrsyKLzQ==', 'face_num': 1}
+Analyze result: {'time_used': 75, 'request_id': '1716304298,4c07a8fb-8325-4692-a99a-d8255b0b3558', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 41}, 'beauty': {'female_score': 63.435, 'male_score': 65.573}}, 'face_rectangle': {'width': 150, 'top': 161, 'left': 498, 'height': 150}, 'face_token': '591edda6d8292f2f193716789cdc99ee'}]}
+Image: Belle (Female Score: 63.435, Male Score: 65.573)
+
+2024-05-21 12:11:38,676 - ERROR - 
+2024-05-21 12:11:38,676 - INFO - Evaluation result: is_beautiful=True
+2024-05-21 12:11:38,676 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-21 12:11:38,676 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-21 12:11:39,073 - INFO - 
+2024-05-21 12:11:39,073 - ERROR - 2024-05-21 12:11:38,755 - INFO - is_beautiful: True
+2024-05-21 12:11:38,755 - INFO - Loading session...
+2024-05-21 12:11:38,755 - INFO - Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x0000000102e0e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000102e06de8 chromedriver + 4271592
+2   chromedriver                        0x0000000102a3819c chromedriver + 278940
+3   chromedriver                        0x0000000102a3c66c chromedriver + 296556
+4   chromedriver                        0x0000000102a3e4e8 chromedriver + 304360
+5   chromedriver                        0x0000000102a3e560 chromedriver + 304480
+6   chromedriver                        0x0000000102a7a3c0 chromedriver + 549824
+7   chromedriver                        0x0000000102ab2c5c chromedriver + 781404
+8   chromedriver                        0x0000000102a6f004 chromedriver + 503812
+9   chromedriver                        0x0000000102a6f9ec chromedriver + 506348
+10  chromedriver                        0x0000000102dd64e8 chromedriver + 4072680
+11  chromedriver                        0x0000000102ddaf94 chromedriver + 4091796
+12  chromedriver                        0x0000000102dbd72c chromedriver + 3970860
+13  chromedriver                        0x0000000102ddb87c chromedriver + 4094076
+14  chromedriver                        0x0000000102db06ac chromedriver + 3917484
+15  chromedriver                        0x0000000102df8ae0 chromedriver + 4213472
+16  chromedriver                        0x0000000102df8c5c chromedriver + 4213852
+17  chromedriver                        0x0000000102e069e0 chromedriver + 4270560
+18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (JavascriptException(),)
+2024-05-21 12:11:39,062 - INFO - Pressed Right Arrow Key.
+
+2024-05-21 12:11:39,281 - INFO - Running extract_image_bumble.py...
+2024-05-21 12:11:39,281 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-21 12:11:39,848 - INFO - Loading session...
+Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
+Waiting for image element...
+Image element found.
+Image URL: https://us1.ecdn2.bumbcdn.com/p565/hidden?euri=AAAAAAAAAAIQDuCTvMxcdvZRJ58q-v8NtQB-EbRtysUBcFUY.SwwOTG-8nGjG7MBtP-1Bl4dyFJQ8wokvsQOV5D4DpaiS4ZrllTyeKDycJ23LHQdaEP1JK0WEI01grrYgFO7ZcP4Oye4rfnDZMe-namdjDY.mCus8DgrDLRGob3heTosvIAD9Azal0pQAqIktW.ePjLO.6yM1PvhMFHXWqBSJTSGXPkE&size=__size__&ck=e6484f87dc27d78b5c19534755c124b1&wm_size=72x72&wm_offs=973x1320&h=_MO&gs=j&t=42.1.0.0
+Image téléchargée et convertie en JPEG : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+L'image est enregistrée à l'emplacement : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+
+2024-05-21 12:11:39,849 - ERROR - 
+2024-05-21 12:11:39,849 - INFO - Running evaluation_bumble.py...
+2024-05-21 12:11:39,849 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-21 12:11:44,325 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716304301,8eca8d22-268c-4a8f-a9aa-2e951b963e82', 'time_used': 163, 'faces': [{'face_token': '87e031e401e641124776370d9311d32a', 'face_rectangle': {'top': 331, 'left': 367, 'width': 385, 'height': 385}, 'attributes': {'facequality': {'value': 0.296, 'threshold': 70.1}}}], 'image_id': '5MKHoPw6awLkyTMJhTXsoA==', 'face_num': 1}
+Analyze result: {'time_used': 91, 'request_id': '1716304304,c085ea66-b162-4acf-8f0f-277c27fcc0a9', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 23}, 'beauty': {'female_score': 79.662, 'male_score': 80.82}}, 'face_rectangle': {'width': 385, 'top': 331, 'left': 367, 'height': 385}, 'face_token': '87e031e401e641124776370d9311d32a'}]}
+Image: Belle (Female Score: 79.662, Male Score: 80.82)
+
+2024-05-21 12:11:44,325 - ERROR - 
+2024-05-21 12:11:44,325 - INFO - Evaluation result: is_beautiful=True
+2024-05-21 12:11:44,325 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-21 12:11:44,325 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-21 12:11:44,641 - INFO - 
+2024-05-21 12:11:44,641 - ERROR - 2024-05-21 12:11:44,404 - INFO - is_beautiful: True
+2024-05-21 12:11:44,404 - INFO - Loading session...
+2024-05-21 12:11:44,404 - INFO - Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x0000000102e0e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000102e06de8 chromedriver + 4271592
+2   chromedriver                        0x0000000102a3819c chromedriver + 278940
+3   chromedriver                        0x0000000102a3c66c chromedriver + 296556
+4   chromedriver                        0x0000000102a3e4e8 chromedriver + 304360
+5   chromedriver                        0x0000000102a3e560 chromedriver + 304480
+6   chromedriver                        0x0000000102a7a3c0 chromedriver + 549824
+7   chromedriver                        0x0000000102ab2c5c chromedriver + 781404
+8   chromedriver                        0x0000000102a6f004 chromedriver + 503812
+9   chromedriver                        0x0000000102a6f9ec chromedriver + 506348
+10  chromedriver                        0x0000000102dd64e8 chromedriver + 4072680
+11  chromedriver                        0x0000000102ddaf94 chromedriver + 4091796
+12  chromedriver                        0x0000000102dbd72c chromedriver + 3970860
+13  chromedriver                        0x0000000102ddb87c chromedriver + 4094076
+14  chromedriver                        0x0000000102db06ac chromedriver + 3917484
+15  chromedriver                        0x0000000102df8ae0 chromedriver + 4213472
+16  chromedriver                        0x0000000102df8c5c chromedriver + 4213852
+17  chromedriver                        0x0000000102e069e0 chromedriver + 4270560
+18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (JavascriptException(),)
+2024-05-21 12:11:44,623 - INFO - Pressed Right Arrow Key.
+
+2024-05-21 12:11:44,887 - INFO - Running extract_image_bumble.py...
+2024-05-21 12:11:44,887 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-21 12:11:45,409 - INFO - Loading session...
+Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
+Waiting for image element...
+Image element found.
+Image URL: https://us1.ecdn2.bumbcdn.com/p534/hidden?euri=AAAAAAAAAAIQVlaxf9DZ1YgFMEa-Ao2sFgCi.SQOeS3ouD1YJ15LEdirZFBi8EF6iR8l4XIPXV408J9RTai-YbYJOyhivN9TJhh28eGjPtZ9.Hkfj3txrf.iQS7LYJaT6ElewU5lrZGwaMulvEtnJwgbn5W0BVbiFUEqmz2fGdV0pUPAVR6H8jEP9yK95OImonS3RRPaePt5tsJQ2TvT5yrzRkJeMgtg&size=__size__&ck=5359718bfa8acd17c0fcf7b86278bd72&wm_size=72x72&wm_offs=823x1523&h=kT4&gs=j&t=42.1.0.0
+Image téléchargée et convertie en JPEG : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+L'image est enregistrée à l'emplacement : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+
+2024-05-21 12:11:45,410 - ERROR - 
+2024-05-21 12:11:45,410 - INFO - Running evaluation_bumble.py...
+2024-05-21 12:11:45,410 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-21 12:11:49,683 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716304306,8b3e7b16-6e1c-4937-a814-42be4269f828', 'time_used': 142, 'faces': [{'face_token': 'a5be48e2ad6582718c9bb97feb39ce94', 'face_rectangle': {'top': 464, 'left': 261, 'width': 293, 'height': 293}, 'attributes': {'facequality': {'value': 80.132, 'threshold': 70.1}}}], 'image_id': 'gabi/QmWFUKfcRRJNlRVQA==', 'face_num': 1}
+Analyze result: {'time_used': 67, 'request_id': '1716304309,0998ece4-0cc1-49d6-859e-79d242c56c49', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 31}, 'beauty': {'female_score': 71.605, 'male_score': 66.335}}, 'face_rectangle': {'width': 293, 'top': 464, 'left': 261, 'height': 293}, 'face_token': 'a5be48e2ad6582718c9bb97feb39ce94'}]}
+Image: Belle (Female Score: 71.605, Male Score: 66.335)
+
+2024-05-21 12:11:49,684 - ERROR - 
+2024-05-21 12:11:49,684 - INFO - Evaluation result: is_beautiful=True
+2024-05-21 12:11:49,684 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-21 12:11:49,684 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-21 12:11:50,082 - INFO - 
+2024-05-21 12:11:50,083 - ERROR - 2024-05-21 12:11:49,764 - INFO - is_beautiful: True
+2024-05-21 12:11:49,764 - INFO - Loading session...
+2024-05-21 12:11:49,764 - INFO - Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x0000000102e0e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000102e06de8 chromedriver + 4271592
+2   chromedriver                        0x0000000102a3819c chromedriver + 278940
+3   chromedriver                        0x0000000102a3c66c chromedriver + 296556
+4   chromedriver                        0x0000000102a3e4e8 chromedriver + 304360
+5   chromedriver                        0x0000000102a3e560 chromedriver + 304480
+6   chromedriver                        0x0000000102a7a3c0 chromedriver + 549824
+7   chromedriver                        0x0000000102ab2c5c chromedriver + 781404
+8   chromedriver                        0x0000000102a6f004 chromedriver + 503812
+9   chromedriver                        0x0000000102a6f9ec chromedriver + 506348
+10  chromedriver                        0x0000000102dd64e8 chromedriver + 4072680
+11  chromedriver                        0x0000000102ddaf94 chromedriver + 4091796
+12  chromedriver                        0x0000000102dbd72c chromedriver + 3970860
+13  chromedriver                        0x0000000102ddb87c chromedriver + 4094076
+14  chromedriver                        0x0000000102db06ac chromedriver + 3917484
+15  chromedriver                        0x0000000102df8ae0 chromedriver + 4213472
+16  chromedriver                        0x0000000102df8c5c chromedriver + 4213852
+17  chromedriver                        0x0000000102e069e0 chromedriver + 4270560
+18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (JavascriptException(),)
+2024-05-21 12:11:50,070 - INFO - Pressed Right Arrow Key.
+
+2024-05-21 12:11:50,288 - INFO - Running extract_image_bumble.py...
+2024-05-21 12:11:50,288 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-21 12:11:50,750 - INFO - Loading session...
+Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
+Waiting for image element...
+Image element found.
+Image URL: https://us1.ecdn2.bumbcdn.com/p526/hidden?euri=AAAAAAAAAAIQE0F1zfL6BAdv7x8GZd0TyAAjqCSF3z06xujvtxfbiBdjzpQTMOvW45Wbs0DTttWvXIlJxEQbjccV1MHzUHl-.CA817Ywf99sOmoolBIkfWIC1wBGD01OyTdofgx0zu1GvkwPo32LQ.fTASo1y5KrholJAuVg5VOZRyImlnkc7C6AbBMecBhMrrCRXCgrlf8RgASEP1zikeBtHH8UxABq&size=__size__&ck=1d87d3d751faa6b5c4c31a77a094b8ca&wm_size=72x72&wm_offs=823x1523&h=guv&gs=j&t=42.1.0.0
+Image téléchargée et convertie en JPEG : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+L'image est enregistrée à l'emplacement : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+
+2024-05-21 12:11:50,750 - ERROR - 
+2024-05-21 12:11:50,750 - INFO - Running evaluation_bumble.py...
+2024-05-21 12:11:50,750 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-21 12:11:55,040 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716304312,84cc6c6a-793d-4da9-8b8d-fc95a7157e0e', 'time_used': 120, 'faces': [{'face_token': 'be700c74166acfe1c05d55614dca2897', 'face_rectangle': {'top': 615, 'left': 408, 'width': 95, 'height': 95}, 'attributes': {'facequality': {'value': 91.568, 'threshold': 70.1}}}], 'image_id': 'GoBLEi7hYwSLUg7j/sy/BA==', 'face_num': 1}
+Analyze result: {'time_used': 118, 'request_id': '1716304315,f0b460c1-e426-493a-ba1a-2460a22497de', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 37}, 'beauty': {'female_score': 56.635, 'male_score': 52.876}}, 'face_rectangle': {'width': 95, 'top': 615, 'left': 408, 'height': 95}, 'face_token': 'be700c74166acfe1c05d55614dca2897'}]}
+Image: Pas Belle (Female Score: 56.635, Male Score: 52.876)
+
+2024-05-21 12:11:55,040 - ERROR - 
+2024-05-21 12:11:55,040 - INFO - Evaluation result: is_beautiful=False
+2024-05-21 12:11:55,040 - INFO - Running navigate_bumble.py with is_beautiful=False...
+2024-05-21 12:11:55,040 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['false']
+2024-05-21 12:11:55,488 - INFO - 
+2024-05-21 12:11:55,488 - ERROR - 2024-05-21 12:11:55,123 - INFO - is_beautiful: False
+2024-05-21 12:11:55,123 - INFO - Loading session...
+2024-05-21 12:11:55,123 - INFO - Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x0000000102e0e4a0 chromedriver + 4301984
+1   chromedriver                        0x0000000102e06de8 chromedriver + 4271592
+2   chromedriver                        0x0000000102a3819c chromedriver + 278940
+3   chromedriver                        0x0000000102a3c66c chromedriver + 296556
+4   chromedriver                        0x0000000102a3e4e8 chromedriver + 304360
+5   chromedriver                        0x0000000102a3e560 chromedriver + 304480
+6   chromedriver                        0x0000000102a7a3c0 chromedriver + 549824
+7   chromedriver                        0x0000000102ab2c5c chromedriver + 781404
+8   chromedriver                        0x0000000102a6f004 chromedriver + 503812
+9   chromedriver                        0x0000000102a6f9ec chromedriver + 506348
+10  chromedriver                        0x0000000102dd64e8 chromedriver + 4072680
+11  chromedriver                        0x0000000102ddaf94 chromedriver + 4091796
+12  chromedriver                        0x0000000102dbd72c chromedriver + 3970860
+13  chromedriver                        0x0000000102ddb87c chromedriver + 4094076
+14  chromedriver                        0x0000000102db06ac chromedriver + 3917484
+15  chromedriver                        0x0000000102df8ae0 chromedriver + 4213472
+16  chromedriver                        0x0000000102df8c5c chromedriver + 4213852
+17  chromedriver                        0x0000000102e069e0 chromedriver + 4270560
+18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (JavascriptException(),)
+2024-05-21 12:11:55,478 - INFO - Pressed Left Arrow Key.
+
+2024-05-21 12:11:55,711 - INFO - Running extract_image_bumble.py...
+2024-05-21 12:11:55,711 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-21 12:11:56,673 - INFO - Loading session...
+Restoring session: 21e9521c4ab550bcf067ca9b1c334625, http://localhost:60305
+Waiting for image element...
+Image element found.
+Image URL: https://us1.ecdn2.bumbcdn.com/p524/hidden?euri=AAAAAAAAAAIQhg5NBaqpXv8hmKLgzsrlNQDZM0FqzihQ6NtekEUFfmc3nKqmoQ3c.itWymqMv3DO7JzLRNDBPcX-mTvtY5YPyR6PdqrWFtfl5jZ9N-0lSY3.SiydTGl30DBC9qiKpyNZV-ELnAy6rYhdj7ch9mLQp-clGkigkrLk1.iEJAEyv33n3oZSkJpROm0MN75b7f3ftkEHrMhgjaMEmrJMKNJU&size=__size__&ck=616ab8d6db75932bfc464af2eaf0b3bd&wm_size=72x72&wm_offs=973x1323&h=hs6&gs=j&t=42.1.0.0
+Image téléchargée et convertie en JPEG : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+L'image est enregistrée à l'emplacement : /Users/frederic/tinder-bot/profile_image_bumble.jpg
+
+2024-05-21 12:11:56,673 - ERROR - 
+2024-05-21 12:11:56,673 - INFO - Running evaluation_bumble.py...
+2024-05-21 12:11:56,673 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []

@@ -1,4 +1,4 @@
-#main_script_bumble.py
+# main_script_bumble.py
 
 import subprocess
 import time
@@ -64,7 +64,7 @@ def main():
     time.sleep(10)
 
     start_time = time.time()
-    run_duration = 30  # Fixed duration of 30 seconds
+    run_duration = random.uniform(20 * 60, 25 * 60)  # Random duration between 20 and 25 minutes
 
     while time.time() - start_time < run_duration:
         logger.info("Running extract_image_bumble.py...")
