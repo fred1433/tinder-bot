@@ -1,3 +1,5 @@
+#extract_image_bumble.py
+
 import time
 import requests
 from selenium import webdriver

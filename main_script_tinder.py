@@ -1,40 +1,60 @@
-
-#main_script_tinder.py
+# main_script_tinder.py
 
 import subprocess
 import time
 import os
 import random
 import pygame
-from datetime import datetime, timedelta
-import pytz
+import logging
 
-def run_script(script_path):
-    return subprocess.run(["python3", script_path])
+# Configurer le logger
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename='tinder_bot.log', filemode='w')
+logger = logging.getLogger()
+
+def run_script(script_path, args=[]):
+    try:
+        logger.info(f"Running script: {script_path} with args: {args}")
+        result = subprocess.run(["python3", script_path] + args, capture_output=True, text=True, check=True)
+        logger.info(result.stdout)
+        logger.error(result.stderr)
+        return result
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Failed to run script {script_path} with args {args}: {e.stderr}")
+        return None
 
 def play_sound(sound_path):
-    pygame.mixer.init()
-    pygame.mixer.music.load(sound_path)
-    pygame.mixer.music.play()
-    while pygame.mixer.music.get_busy():
-        time.sleep(1)
+    try:
+        pygame.mixer.init()
+        pygame.mixer.music.load(sound_path)
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy():
+            time.sleep(1)
+    except Exception as e:
+        logger.error(f"Failed to play sound {sound_path}: {e}")
 
 def close_chrome():
-    print("Fermeture de Google Chrome...")
-    subprocess.run(["pkill", "-f", "Google Chrome"])
-    time.sleep(5)
-    print("Google Chrome est fermé.")
+    try:
+        logger.info("Fermeture de Google Chrome...")
+        subprocess.run(["pkill", "-f", "Google Chrome"])
+        time.sleep(5)
+        logger.info("Google Chrome est fermé.")
+    except Exception as e:
+        logger.error(f"Failed to close Google Chrome: {e}")
 
 def main():
-    print("Le processus commencera dans 3 secondes.")
+    logger.info("Le processus commencera dans 3 secondes.")
     play_sound("/Users/frederic/tinder-bot/alert_sound.mp3")
     time.sleep(3)
     close_chrome()
 
-    print("Running open_tinder.py...")
-    open_tinder_process = subprocess.Popen(["python3", "/Users/frederic/tinder-bot/open_tinder.py"])
+    logger.info("Running open_tinder.py...")
+    try:
+        open_tinder_process = subprocess.Popen(["python3", "/Users/frederic/tinder-bot/open_tinder.py"])
+    except Exception as e:
+        logger.error(f"Failed to start open_tinder.py: {e}")
+        return
 
-    print("Waiting for session to be ready...")
+    logger.info("Waiting for session to be ready...")
     session_ready_path = '/Users/frederic/tinder-bot/session_ready.txt'
     while not os.path.exists(session_ready_path):
         time.sleep(1)
@@ -42,42 +62,33 @@ def main():
     time.sleep(10)
 
     start_time = time.time()
-    run_duration = random.uniform(20 * 60, 25 * 60)
+    run_duration = 30  # Fixed duration of 30 seconds
 
     while time.time() - start_time < run_duration:
-        print("Running extract_image_tinder.py...")
+        logger.info("Running extract_image_tinder.py...")
         run_script("/Users/frederic/tinder-bot/extract_image_tinder.py")
 
-        print("Running evaluation_tinder.py...")
-        evaluation_result = subprocess.run(["python3", "/Users/frederic/tinder-bot/evaluation_tinder.py"], capture_output=True, text=True)
-        print(evaluation_result.stdout)
+        logger.info("Running evaluation_tinder.py...")
+        evaluation_result = run_script("/Users/frederic/tinder-bot/evaluation_tinder.py")
+        if evaluation_result is None:
+            continue
 
-        is_beautiful = "Image: Belle" in evaluation_result.stdout
+        is_beautiful = "Image: Belle" in evaluation_result.stdout if evaluation_result.stdout else False
+        logger.info(f"Evaluation result: is_beautiful={is_beautiful}")
 
-        print(f"Running navigate_tinder.py with is_beautiful={is_beautiful}...")
-        subprocess.run(["python3", "/Users/frederic/tinder-bot/navigate_tinder.py", str(is_beautiful)])
+        logger.info(f"Running navigate_tinder.py with is_beautiful={is_beautiful}...")
+        run_script("/Users/frederic/tinder-bot/navigate_tinder.py", [str(is_beautiful).lower()])
 
         time.sleep(random.uniform(0.2, 0.3))
 
-    print("Terminating the browser...")
+    logger.info("Terminating the browser...")
     open_tinder_process.terminate()
-    print("Browser terminated.")
-    os.remove(session_ready_path)
-    print("Browser terminated and script finished.")
+    logger.info("Browser terminated.")
+    try:
+        os.remove(session_ready_path)
+        logger.info("session_ready.txt removed.")
+    except Exception as e:
+        logger.error(f"Failed to remove session_ready.txt: {e}")
 
 if __name__ == "__main__":
-    timezone = pytz.timezone("America/Sao_Paulo")
-    while True:
-        current_time = datetime.now(timezone)
-        if current_time.hour >= 8 and current_time.hour < 23:
-            main()
-            wait_time = random.uniform(2 * 60 * 60, 2.5 * 60 * 60)
-            print(f"Waiting for {wait_time / 3600:.2f} hours before the next run.")
-            time.sleep(wait_time)
-        else:
-            next_run_time = datetime(current_time.year, current_time.month, current_time.day, 8, 2, tzinfo=timezone)
-            if current_time.hour >= 23:
-                next_run_time += timedelta(days=1)
-            sleep_time = (next_run_time - current_time).total_seconds()
-            print(f"Current time is outside the allowed range. Sleeping for {sleep_time / 3600:.2f} hours until next allowed run time.")
-            time.sleep(sleep_time)
+    main()

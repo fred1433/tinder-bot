@@ -44,6 +44,11 @@ if __name__ == "__main__":
     print(f"Restoring session: {session_id}, {executor_url}")
     driver = attach_to_session(executor_url, session_id)
 
+    if len(sys.argv) < 2:
+        print("Missing argument: is_beautiful (true/false)")
+        sys.exit(1)
+
     is_beautiful = sys.argv[1].lower() == 'true'
+    print(f"Navigating with is_beautiful={is_beautiful}")
 
     navigate(driver, is_beautiful)

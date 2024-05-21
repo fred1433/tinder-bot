@@ -1,22 +1,26 @@
+#main_script_bumble.py
+
 import subprocess
 import time
 import os
 import random
 import pygame
-from datetime import datetime, timedelta
-import pytz
+from datetime import datetime
 import logging
 
 # Configurer le logger
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename='tinder_bot.log', filemode='w')
 logger = logging.getLogger()
 
 def run_script(script_path, args=[]):
     try:
+        logger.info(f"Running script: {script_path} with args: {args}")
         result = subprocess.run(["python3", script_path] + args, capture_output=True, text=True, check=True)
+        logger.info(result.stdout)
+        logger.error(result.stderr)
         return result
     except subprocess.CalledProcessError as e:
-        logger.error(f"Failed to run script {script_path} with args {args}: {e}")
+        logger.error(f"Failed to run script {script_path} with args {args}: {e.stderr}")
         return None
 
 def play_sound(sound_path):
@@ -52,14 +56,15 @@ def main():
         return
 
     logger.info("Waiting for session to be ready...")
-    session_ready_path = '/Users/frederic/tinder-bot/session_ready.txt'
+    session_ready_path = '/Users/frederic/tinder-bot/session_ready_bumble.txt'
     while not os.path.exists(session_ready_path):
         time.sleep(2)
 
+    logger.info("Session is ready. Starting extraction and evaluation process...")
     time.sleep(10)
 
     start_time = time.time()
-    run_duration = random.uniform(20 * 60, 25 * 60)
+    run_duration = 30  # Fixed duration of 30 seconds
 
     while time.time() - start_time < run_duration:
         logger.info("Running extract_image_bumble.py...")
@@ -71,9 +76,10 @@ def main():
             continue
 
         is_beautiful = "Image: Belle" in evaluation_result.stdout if evaluation_result.stdout else False
+        logger.info(f"Evaluation result: is_beautiful={is_beautiful}")
 
         logger.info(f"Running navigate_bumble.py with is_beautiful={is_beautiful}...")
-        run_script("/Users/frederic/tinder-bot/navigate_bumble.py", [str(is_beautiful)])
+        run_script("/Users/frederic/tinder-bot/navigate_bumble.py", [str(is_beautiful).lower()])
 
         time.sleep(random.uniform(0.2, 0.3))
 
@@ -82,23 +88,9 @@ def main():
     logger.info("Browser terminated.")
     try:
         os.remove(session_ready_path)
-        logger.info("session_ready.txt removed.")
+        logger.info("session_ready_bumble.txt removed.")
     except Exception as e:
-        logger.error(f"Failed to remove session_ready.txt: {e}")
+        logger.error(f"Failed to remove session_ready_bumble.txt: {e}")
 
 if __name__ == "__main__":
-    timezone = pytz.timezone("America/Sao_Paulo")
-    while True:
-        current_time = datetime.now(timezone)
-        if 8 <= current_time.hour < 23:
-            main()
-            wait_time = random.uniform(2 * 60 * 60, 2.5 * 60 * 60)
-            logger.info(f"Waiting for {wait_time / 3600:.2f} hours before the next run.")
-            time.sleep(wait_time)
-        else:
-            next_run_time = datetime(current_time.year, current_time.month, current_time.day, 8, 2, tzinfo=timezone)
-            if current_time.hour >= 23:
-                next_run_time += timedelta(days=1)
-            sleep_time = (next_run_time - current_time).total_seconds()
-            logger.info(f"Current time is outside the allowed range. Sleeping for {sleep_time / 3600:.2f} hours until next allowed run time.")
-            time.sleep(sleep_time)
+    main()

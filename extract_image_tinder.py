@@ -36,7 +36,7 @@ def extract_image(driver):
         print(f"Image URL: {image_url}")
 
         image_response = requests.get(image_url)
-        image_path = "/Users/frederic/tinder-bot/profile_image.jpg"
+        image_path = "/Users/frederic/tinder-bot/profile_image_tinder.jpg"
 
         image = Image.open(io.BytesIO(image_response.content))
         image = image.convert("RGB")
