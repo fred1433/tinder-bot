@@ -1,5 +1,1211 @@
-2024-05-23 11:59:01,024 - INFO - Le processus commencera dans 3 secondes.
-2024-05-23 11:59:06,218 - INFO - Fermeture de Google Chrome...
-2024-05-23 11:59:11,249 - INFO - Google Chrome est fermé.
-2024-05-23 11:59:11,254 - INFO - Running open_bumble.py...
-2024-05-23 11:59:11,260 - INFO - Waiting for session to be ready...
+2024-05-23 16:40:18,219 - INFO - Le processus commencera dans 3 secondes.
+2024-05-23 16:40:23,409 - INFO - Fermeture de Google Chrome...
+2024-05-23 16:40:28,460 - INFO - Google Chrome est fermé.
+2024-05-23 16:40:28,461 - INFO - Running open_bumble.py...
+2024-05-23 16:40:28,469 - INFO - Waiting for session to be ready...
+2024-05-23 16:40:28,470 - INFO - Session is ready. Starting extraction and evaluation process...
+2024-05-23 16:40:38,475 - INFO - Running extract_image_bumble.py...
+2024-05-23 16:40:38,475 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-23 16:40:38,613 - INFO - Loading session...
+Restoring session: cc19c72b416a22fa9f05889931f380ff, http://localhost:62274
+Waiting for image element...
+Erreur : HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107232090>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Échec de l'extraction de l'image.
+
+2024-05-23 16:40:38,613 - ERROR - 
+2024-05-23 16:40:38,613 - INFO - Running evaluation_bumble.py...
+2024-05-23 16:40:38,613 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-23 16:40:43,307 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716493240,c688b37e-469b-4ef4-8950-6c3fecdf1186', 'time_used': 222, 'faces': [{'face_token': 'dfc194c389aa9255e17ebcbabd15c8ee', 'face_rectangle': {'top': 70, 'left': 273, 'width': 479, 'height': 479}, 'attributes': {'facequality': {'value': 93.59, 'threshold': 70.1}}}], 'image_id': 'x73/DRDhrkQJYpxl4igu/A==', 'face_num': 1}
+Analyze result: {'time_used': 118, 'request_id': '1716493243,0020aff3-eb25-4857-89a8-d7bd9d3ae470', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 28}, 'beauty': {'female_score': 77.051, 'male_score': 77.478}}, 'face_rectangle': {'width': 479, 'top': 70, 'left': 273, 'height': 479}, 'face_token': 'dfc194c389aa9255e17ebcbabd15c8ee'}]}
+Image: Belle (Female Score: 77.051, Male Score: 77.478)
+
+2024-05-23 16:40:43,307 - ERROR - 
+2024-05-23 16:40:43,307 - INFO - Evaluation result: is_beautiful=True
+2024-05-23 16:40:43,307 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-23 16:40:43,307 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-23 16:40:43,797 - INFO - 
+2024-05-23 16:40:43,798 - ERROR - 2024-05-23 16:40:43,387 - INFO - is_beautiful: True
+2024-05-23 16:40:43,387 - INFO - Loading session...
+2024-05-23 16:40:43,387 - INFO - Restoring session: cc19c72b416a22fa9f05889931f380ff, http://localhost:62274
+2024-05-23 16:40:43,762 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1047a5490>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:43,764 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1047b9010>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:43,765 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1047b9b90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+--- Logging error ---
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1289, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1048, in _send_output
+    self.send(msg)
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 986, in send
+    self.connect()
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x1047ba710>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 345, in execute
+    response = self.command_executor.execute(driver_command, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 302, in execute
+    return self._request(command_info[0], url, body=data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 322, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/_request_methods.py", line 118, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/_request_methods.py", line 217, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/poolmanager.py", line 444, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1047ba710>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (MaxRetryError("HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1047ba710>: Failed to establish a new connection: [Errno 61] Connection refused'))"),)
+2024-05-23 16:40:43,775 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1047bb2d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:43,776 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10488c5d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:43,777 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10488d250>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:43,778 - ERROR - Erreur : HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10488de90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+2024-05-23 16:40:44,044 - INFO - Running extract_image_bumble.py...
+2024-05-23 16:40:44,044 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-23 16:40:44,171 - INFO - Loading session...
+Restoring session: cc19c72b416a22fa9f05889931f380ff, http://localhost:62274
+Waiting for image element...
+Erreur : HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1040ba310>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Échec de l'extraction de l'image.
+
+2024-05-23 16:40:44,171 - ERROR - 
+2024-05-23 16:40:44,171 - INFO - Running evaluation_bumble.py...
+2024-05-23 16:40:44,171 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-23 16:40:48,462 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716493245,892b44bb-b857-46d3-bd20-3c282d6c5525', 'time_used': 112, 'faces': [{'face_token': '94b92ccb2d2555ad7f043a96631f81c1', 'face_rectangle': {'top': 70, 'left': 273, 'width': 479, 'height': 479}, 'attributes': {'facequality': {'value': 93.59, 'threshold': 70.1}}}], 'image_id': 'x73/DRDhrkQJYpxl4igu/A==', 'face_num': 1}
+Analyze result: {'time_used': 95, 'request_id': '1716493248,1b8d3d20-b8db-4443-a11f-a0150ad4af2a', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 28}, 'beauty': {'female_score': 77.051, 'male_score': 77.478}}, 'face_rectangle': {'width': 479, 'top': 70, 'left': 273, 'height': 479}, 'face_token': '94b92ccb2d2555ad7f043a96631f81c1'}]}
+Image: Belle (Female Score: 77.051, Male Score: 77.478)
+
+2024-05-23 16:40:48,462 - ERROR - 
+2024-05-23 16:40:48,462 - INFO - Evaluation result: is_beautiful=True
+2024-05-23 16:40:48,462 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-23 16:40:48,462 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-23 16:40:48,789 - INFO - 
+2024-05-23 16:40:48,789 - ERROR - 2024-05-23 16:40:48,541 - INFO - is_beautiful: True
+2024-05-23 16:40:48,541 - INFO - Loading session...
+2024-05-23 16:40:48,541 - INFO - Restoring session: cc19c72b416a22fa9f05889931f380ff, http://localhost:62274
+2024-05-23 16:40:48,755 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1062ad490>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:48,757 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1062c1010>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:48,758 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1062c1b90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+--- Logging error ---
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1289, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1048, in _send_output
+    self.send(msg)
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 986, in send
+    self.connect()
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x1062c2710>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 345, in execute
+    response = self.command_executor.execute(driver_command, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 302, in execute
+    return self._request(command_info[0], url, body=data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 322, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/_request_methods.py", line 118, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/_request_methods.py", line 217, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/poolmanager.py", line 444, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1062c2710>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (MaxRetryError("HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1062c2710>: Failed to establish a new connection: [Errno 61] Connection refused'))"),)
+2024-05-23 16:40:48,765 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1062c32d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:48,766 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1063945d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:48,767 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106395250>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:48,767 - ERROR - Erreur : HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106395e90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+2024-05-23 16:40:49,021 - INFO - Running extract_image_bumble.py...
+2024-05-23 16:40:49,021 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-23 16:40:49,139 - INFO - Loading session...
+Restoring session: cc19c72b416a22fa9f05889931f380ff, http://localhost:62274
+Waiting for image element...
+Erreur : HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102e36310>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Échec de l'extraction de l'image.
+
+2024-05-23 16:40:49,140 - ERROR - 
+2024-05-23 16:40:49,140 - INFO - Running evaluation_bumble.py...
+2024-05-23 16:40:49,140 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-23 16:40:53,345 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716493250,1cedc3d0-edb6-4de1-b6e1-5753d139ce9c', 'time_used': 110, 'faces': [{'face_token': 'f4d009537b557f78fe3e93f0fe4066eb', 'face_rectangle': {'top': 70, 'left': 273, 'width': 479, 'height': 479}, 'attributes': {'facequality': {'value': 93.59, 'threshold': 70.1}}}], 'image_id': 'x73/DRDhrkQJYpxl4igu/A==', 'face_num': 1}
+Analyze result: {'time_used': 68, 'request_id': '1716493253,9708ad36-5544-426c-8e15-ddae834a7ee5', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 28}, 'beauty': {'female_score': 77.051, 'male_score': 77.478}}, 'face_rectangle': {'width': 479, 'top': 70, 'left': 273, 'height': 479}, 'face_token': 'f4d009537b557f78fe3e93f0fe4066eb'}]}
+Image: Belle (Female Score: 77.051, Male Score: 77.478)
+
+2024-05-23 16:40:53,345 - ERROR - 
+2024-05-23 16:40:53,345 - INFO - Evaluation result: is_beautiful=True
+2024-05-23 16:40:53,345 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-23 16:40:53,345 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-23 16:40:53,722 - INFO - 
+2024-05-23 16:40:53,722 - ERROR - 2024-05-23 16:40:53,425 - INFO - is_beautiful: True
+2024-05-23 16:40:53,425 - INFO - Loading session...
+2024-05-23 16:40:53,425 - INFO - Restoring session: cc19c72b416a22fa9f05889931f380ff, http://localhost:62274
+2024-05-23 16:40:53,688 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ecd490>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:53,690 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ee1010>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:53,691 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ee1b90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+--- Logging error ---
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1289, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1048, in _send_output
+    self.send(msg)
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 986, in send
+    self.connect()
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x105ee2710>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 345, in execute
+    response = self.command_executor.execute(driver_command, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 302, in execute
+    return self._request(command_info[0], url, body=data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 322, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/_request_methods.py", line 118, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/_request_methods.py", line 217, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/poolmanager.py", line 444, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ee2710>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (MaxRetryError("HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ee2710>: Failed to establish a new connection: [Errno 61] Connection refused'))"),)
+2024-05-23 16:40:53,699 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ee32d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:53,700 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105fb45d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:53,700 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105fb5250>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:53,701 - ERROR - Erreur : HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105fb5e90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+2024-05-23 16:40:53,995 - INFO - Running extract_image_bumble.py...
+2024-05-23 16:40:53,996 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-23 16:40:54,123 - INFO - Loading session...
+Restoring session: cc19c72b416a22fa9f05889931f380ff, http://localhost:62274
+Waiting for image element...
+Erreur : HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10675a310>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Échec de l'extraction de l'image.
+
+2024-05-23 16:40:54,123 - ERROR - 
+2024-05-23 16:40:54,123 - INFO - Running evaluation_bumble.py...
+2024-05-23 16:40:54,123 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-23 16:40:58,399 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716493255,f253fe48-3649-416f-88fe-439f57aea10e', 'time_used': 111, 'faces': [{'face_token': '6678e8079c0f8da263c39ef3d5bff07f', 'face_rectangle': {'top': 70, 'left': 273, 'width': 479, 'height': 479}, 'attributes': {'facequality': {'value': 93.59, 'threshold': 70.1}}}], 'image_id': 'x73/DRDhrkQJYpxl4igu/A==', 'face_num': 1}
+Analyze result: {'time_used': 102, 'request_id': '1716493258,14ba91fc-c2ef-4c3e-9506-7568d0fef946', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 28}, 'beauty': {'female_score': 77.051, 'male_score': 77.478}}, 'face_rectangle': {'width': 479, 'top': 70, 'left': 273, 'height': 479}, 'face_token': '6678e8079c0f8da263c39ef3d5bff07f'}]}
+Image: Belle (Female Score: 77.051, Male Score: 77.478)
+
+2024-05-23 16:40:58,399 - ERROR - 
+2024-05-23 16:40:58,399 - INFO - Evaluation result: is_beautiful=True
+2024-05-23 16:40:58,399 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-23 16:40:58,399 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-23 16:40:58,765 - INFO - 
+2024-05-23 16:40:58,765 - ERROR - 2024-05-23 16:40:58,480 - INFO - is_beautiful: True
+2024-05-23 16:40:58,480 - INFO - Loading session...
+2024-05-23 16:40:58,480 - INFO - Restoring session: cc19c72b416a22fa9f05889931f380ff, http://localhost:62274
+2024-05-23 16:40:58,731 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ed1490>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:58,733 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ee5010>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:58,734 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ee5b90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+--- Logging error ---
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 395, in request
+    self.endheaders()
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1289, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1048, in _send_output
+    self.send(msg)
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 986, in send
+    self.connect()
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 243, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x105ee6710>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 345, in execute
+    response = self.command_executor.execute(driver_command, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 302, in execute
+    return self._request(command_info[0], url, body=data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 322, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/_request_methods.py", line 118, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/_request_methods.py", line 217, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/poolmanager.py", line 444, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ee6710>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (MaxRetryError("HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ee6710>: Failed to establish a new connection: [Errno 61] Connection refused'))"),)
+2024-05-23 16:40:58,741 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105ee72d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:58,742 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105fb85d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:58,743 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105fb9250>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/cc19c72b416a22fa9f05889931f380ff/element
+2024-05-23 16:40:58,744 - ERROR - Erreur : HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x105fb9e90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+2024-05-23 16:40:59,022 - INFO - Running extract_image_bumble.py...
+2024-05-23 16:40:59,023 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-23 16:40:59,136 - INFO - Loading session...
+Restoring session: cc19c72b416a22fa9f05889931f380ff, http://localhost:62274
+Waiting for image element...
+Erreur : HTTPConnectionPool(host='localhost', port=62274): Max retries exceeded with url: /session/cc19c72b416a22fa9f05889931f380ff/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x104022310>: Failed to establish a new connection: [Errno 61] Connection refused'))
+Échec de l'extraction de l'image.
+
+2024-05-23 16:40:59,136 - ERROR - 
+2024-05-23 16:40:59,136 - INFO - Running evaluation_bumble.py...
+2024-05-23 16:40:59,136 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-23 16:41:03,402 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716493260,064db477-f097-4337-b479-96d3f6f68313', 'time_used': 111, 'faces': [{'face_token': 'e964d66bd9acc2c8c545b59a7a3b0aa4', 'face_rectangle': {'top': 70, 'left': 273, 'width': 479, 'height': 479}, 'attributes': {'facequality': {'value': 93.59, 'threshold': 70.1}}}], 'image_id': 'x73/DRDhrkQJYpxl4igu/A==', 'face_num': 1}
+Analyze result: {'time_used': 88, 'request_id': '1716493263,fcca9889-0981-423a-b6ed-a7c1af379151', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 28}, 'beauty': {'female_score': 77.051, 'male_score': 77.478}}, 'face_rectangle': {'width': 479, 'top': 70, 'left': 273, 'height': 479}, 'face_token': 'e964d66bd9acc2c8c545b59a7a3b0aa4'}]}
+Image: Belle (Female Score: 77.051, Male Score: 77.478)
+
+2024-05-23 16:41:03,402 - ERROR - 
+2024-05-23 16:41:03,402 - INFO - Evaluation result: is_beautiful=True
+2024-05-23 16:41:03,402 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-23 16:41:03,402 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-23 16:41:03,896 - INFO - 
+2024-05-23 16:41:03,896 - ERROR - 2024-05-23 16:41:03,483 - INFO - is_beautiful: True
+2024-05-23 16:41:03,483 - INFO - Loading session...
+2024-05-23 16:41:03,483 - INFO - Restoring session: 85b00f0a380a8e337a16feedc8e7048f, http://localhost:62784
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x0000000104cd24a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104ccade8 chromedriver + 4271592
+2   chromedriver                        0x00000001048fc19c chromedriver + 278940
+3   chromedriver                        0x000000010490066c chromedriver + 296556
+4   chromedriver                        0x00000001049024e8 chromedriver + 304360
+5   chromedriver                        0x0000000104902560 chromedriver + 304480
+6   chromedriver                        0x000000010493e3c0 chromedriver + 549824
+7   chromedriver                        0x0000000104976c5c chromedriver + 781404
+8   chromedriver                        0x0000000104933004 chromedriver + 503812
+9   chromedriver                        0x00000001049339ec chromedriver + 506348
+10  chromedriver                        0x0000000104c9a4e8 chromedriver + 4072680
+11  chromedriver                        0x0000000104c9ef94 chromedriver + 4091796
+12  chromedriver                        0x0000000104c8172c chromedriver + 3970860
+13  chromedriver                        0x0000000104c9f87c chromedriver + 4094076
+14  chromedriver                        0x0000000104c746ac chromedriver + 3917484
+15  chromedriver                        0x0000000104cbcae0 chromedriver + 4213472
+16  chromedriver                        0x0000000104cbcc5c chromedriver + 4213852
+17  chromedriver                        0x0000000104cca9e0 chromedriver + 4270560
+18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (JavascriptException(),)
+2024-05-23 16:41:03,886 - INFO - Pressed Right Arrow Key.
+
+2024-05-23 16:41:04,116 - INFO - Running extract_image_bumble.py...
+2024-05-23 16:41:04,117 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-23 16:41:24,337 - INFO - Loading session...
+Restoring session: 85b00f0a380a8e337a16feedc8e7048f, http://localhost:62784
+Waiting for image element...
+Erreur : Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104cd24a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104ccade8 chromedriver + 4271592
+2   chromedriver                        0x00000001048fc19c chromedriver + 278940
+3   chromedriver                        0x000000010493e2c4 chromedriver + 549572
+4   chromedriver                        0x0000000104976c5c chromedriver + 781404
+5   chromedriver                        0x0000000104933004 chromedriver + 503812
+6   chromedriver                        0x00000001049339ec chromedriver + 506348
+7   chromedriver                        0x0000000104c9a4e8 chromedriver + 4072680
+8   chromedriver                        0x0000000104c9ef94 chromedriver + 4091796
+9   chromedriver                        0x0000000104c8172c chromedriver + 3970860
+10  chromedriver                        0x0000000104c9f87c chromedriver + 4094076
+11  chromedriver                        0x0000000104c746ac chromedriver + 3917484
+12  chromedriver                        0x0000000104cbcae0 chromedriver + 4213472
+13  chromedriver                        0x0000000104cbcc5c chromedriver + 4213852
+14  chromedriver                        0x0000000104cca9e0 chromedriver + 4270560
+15  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+Échec de l'extraction de l'image.
+
+2024-05-23 16:41:24,337 - ERROR - 
+2024-05-23 16:41:24,337 - INFO - Running evaluation_bumble.py...
+2024-05-23 16:41:24,337 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-23 16:41:28,613 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716493285,7649521c-b55c-4636-91e5-8085ccf9d1fe', 'time_used': 109, 'faces': [{'face_token': 'c8cdba536f9c5bc295b0885d5f4977df', 'face_rectangle': {'top': 70, 'left': 273, 'width': 479, 'height': 479}, 'attributes': {'facequality': {'value': 93.59, 'threshold': 70.1}}}], 'image_id': 'x73/DRDhrkQJYpxl4igu/A==', 'face_num': 1}
+Analyze result: {'time_used': 89, 'request_id': '1716493288,16d38983-597c-4481-8ca7-156f779ee6ca', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 28}, 'beauty': {'female_score': 77.051, 'male_score': 77.478}}, 'face_rectangle': {'width': 479, 'top': 70, 'left': 273, 'height': 479}, 'face_token': 'c8cdba536f9c5bc295b0885d5f4977df'}]}
+Image: Belle (Female Score: 77.051, Male Score: 77.478)
+
+2024-05-23 16:41:28,614 - ERROR - 
+2024-05-23 16:41:28,614 - INFO - Evaluation result: is_beautiful=True
+2024-05-23 16:41:28,614 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-23 16:41:28,614 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-23 16:41:29,060 - INFO - 
+2024-05-23 16:41:29,060 - ERROR - 2024-05-23 16:41:28,696 - INFO - is_beautiful: True
+2024-05-23 16:41:28,696 - INFO - Loading session...
+2024-05-23 16:41:28,696 - INFO - Restoring session: 85b00f0a380a8e337a16feedc8e7048f, http://localhost:62784
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x0000000104cd24a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104ccade8 chromedriver + 4271592
+2   chromedriver                        0x00000001048fc19c chromedriver + 278940
+3   chromedriver                        0x000000010490066c chromedriver + 296556
+4   chromedriver                        0x00000001049024e8 chromedriver + 304360
+5   chromedriver                        0x0000000104902560 chromedriver + 304480
+6   chromedriver                        0x000000010493e3c0 chromedriver + 549824
+7   chromedriver                        0x0000000104976c5c chromedriver + 781404
+8   chromedriver                        0x0000000104933004 chromedriver + 503812
+9   chromedriver                        0x00000001049339ec chromedriver + 506348
+10  chromedriver                        0x0000000104c9a4e8 chromedriver + 4072680
+11  chromedriver                        0x0000000104c9ef94 chromedriver + 4091796
+12  chromedriver                        0x0000000104c8172c chromedriver + 3970860
+13  chromedriver                        0x0000000104c9f87c chromedriver + 4094076
+14  chromedriver                        0x0000000104c746ac chromedriver + 3917484
+15  chromedriver                        0x0000000104cbcae0 chromedriver + 4213472
+16  chromedriver                        0x0000000104cbcc5c chromedriver + 4213852
+17  chromedriver                        0x0000000104cca9e0 chromedriver + 4270560
+18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (JavascriptException(),)
+2024-05-23 16:41:29,049 - INFO - Pressed Right Arrow Key.
+
+2024-05-23 16:41:29,328 - INFO - Running extract_image_bumble.py...
+2024-05-23 16:41:29,328 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-23 16:41:49,548 - INFO - Loading session...
+Restoring session: 85b00f0a380a8e337a16feedc8e7048f, http://localhost:62784
+Waiting for image element...
+Erreur : Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104cd24a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104ccade8 chromedriver + 4271592
+2   chromedriver                        0x00000001048fc19c chromedriver + 278940
+3   chromedriver                        0x000000010493e2c4 chromedriver + 549572
+4   chromedriver                        0x0000000104976c5c chromedriver + 781404
+5   chromedriver                        0x0000000104933004 chromedriver + 503812
+6   chromedriver                        0x00000001049339ec chromedriver + 506348
+7   chromedriver                        0x0000000104c9a4e8 chromedriver + 4072680
+8   chromedriver                        0x0000000104c9ef94 chromedriver + 4091796
+9   chromedriver                        0x0000000104c8172c chromedriver + 3970860
+10  chromedriver                        0x0000000104c9f87c chromedriver + 4094076
+11  chromedriver                        0x0000000104c746ac chromedriver + 3917484
+12  chromedriver                        0x0000000104cbcae0 chromedriver + 4213472
+13  chromedriver                        0x0000000104cbcc5c chromedriver + 4213852
+14  chromedriver                        0x0000000104cca9e0 chromedriver + 4270560
+15  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+Échec de l'extraction de l'image.
+
+2024-05-23 16:41:49,548 - ERROR - 
+2024-05-23 16:41:49,549 - INFO - Running evaluation_bumble.py...
+2024-05-23 16:41:49,549 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-23 16:41:53,879 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716493310,027dece5-260b-4600-8e11-72b7d5d04b29', 'time_used': 139, 'faces': [{'face_token': 'af684cca9f999edf0394aac73c0cd32b', 'face_rectangle': {'top': 70, 'left': 273, 'width': 479, 'height': 479}, 'attributes': {'facequality': {'value': 93.59, 'threshold': 70.1}}}], 'image_id': 'x73/DRDhrkQJYpxl4igu/A==', 'face_num': 1}
+Analyze result: {'time_used': 107, 'request_id': '1716493313,92dc6ee7-e781-4477-93b0-2b8db3495e83', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 28}, 'beauty': {'female_score': 77.051, 'male_score': 77.478}}, 'face_rectangle': {'width': 479, 'top': 70, 'left': 273, 'height': 479}, 'face_token': 'af684cca9f999edf0394aac73c0cd32b'}]}
+Image: Belle (Female Score: 77.051, Male Score: 77.478)
+
+2024-05-23 16:41:53,879 - ERROR - 
+2024-05-23 16:41:53,879 - INFO - Evaluation result: is_beautiful=True
+2024-05-23 16:41:53,879 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-23 16:41:53,879 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-23 16:41:54,428 - INFO - 
+2024-05-23 16:41:54,429 - ERROR - 2024-05-23 16:41:53,952 - INFO - is_beautiful: True
+2024-05-23 16:41:53,952 - INFO - Loading session...
+2024-05-23 16:41:53,952 - INFO - Restoring session: 85b00f0a380a8e337a16feedc8e7048f, http://localhost:62784
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x0000000104cd24a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104ccade8 chromedriver + 4271592
+2   chromedriver                        0x00000001048fc19c chromedriver + 278940
+3   chromedriver                        0x000000010490066c chromedriver + 296556
+4   chromedriver                        0x00000001049024e8 chromedriver + 304360
+5   chromedriver                        0x0000000104902560 chromedriver + 304480
+6   chromedriver                        0x000000010493e3c0 chromedriver + 549824
+7   chromedriver                        0x0000000104976c5c chromedriver + 781404
+8   chromedriver                        0x0000000104933004 chromedriver + 503812
+9   chromedriver                        0x00000001049339ec chromedriver + 506348
+10  chromedriver                        0x0000000104c9a4e8 chromedriver + 4072680
+11  chromedriver                        0x0000000104c9ef94 chromedriver + 4091796
+12  chromedriver                        0x0000000104c8172c chromedriver + 3970860
+13  chromedriver                        0x0000000104c9f87c chromedriver + 4094076
+14  chromedriver                        0x0000000104c746ac chromedriver + 3917484
+15  chromedriver                        0x0000000104cbcae0 chromedriver + 4213472
+16  chromedriver                        0x0000000104cbcc5c chromedriver + 4213852
+17  chromedriver                        0x0000000104cca9e0 chromedriver + 4270560
+18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (JavascriptException(),)
+2024-05-23 16:41:54,414 - INFO - Pressed Right Arrow Key.
+
+2024-05-23 16:41:54,674 - INFO - Running extract_image_bumble.py...
+2024-05-23 16:41:54,675 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-23 16:42:14,912 - INFO - Loading session...
+Restoring session: 85b00f0a380a8e337a16feedc8e7048f, http://localhost:62784
+Waiting for image element...
+Erreur : Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104cd24a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104ccade8 chromedriver + 4271592
+2   chromedriver                        0x00000001048fc19c chromedriver + 278940
+3   chromedriver                        0x000000010493e2c4 chromedriver + 549572
+4   chromedriver                        0x0000000104976c5c chromedriver + 781404
+5   chromedriver                        0x0000000104933004 chromedriver + 503812
+6   chromedriver                        0x00000001049339ec chromedriver + 506348
+7   chromedriver                        0x0000000104c9a4e8 chromedriver + 4072680
+8   chromedriver                        0x0000000104c9ef94 chromedriver + 4091796
+9   chromedriver                        0x0000000104c8172c chromedriver + 3970860
+10  chromedriver                        0x0000000104c9f87c chromedriver + 4094076
+11  chromedriver                        0x0000000104c746ac chromedriver + 3917484
+12  chromedriver                        0x0000000104cbcae0 chromedriver + 4213472
+13  chromedriver                        0x0000000104cbcc5c chromedriver + 4213852
+14  chromedriver                        0x0000000104cca9e0 chromedriver + 4270560
+15  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+Échec de l'extraction de l'image.
+
+2024-05-23 16:42:14,913 - ERROR - 
+2024-05-23 16:42:14,913 - INFO - Running evaluation_bumble.py...
+2024-05-23 16:42:14,913 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-23 16:42:19,464 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716493336,9f236243-b5db-4859-afe0-7de512cfdbe6', 'time_used': 111, 'faces': [{'face_token': '5f61cb844bc127b5f5454a24d69af35d', 'face_rectangle': {'top': 70, 'left': 273, 'width': 479, 'height': 479}, 'attributes': {'facequality': {'value': 93.59, 'threshold': 70.1}}}], 'image_id': 'x73/DRDhrkQJYpxl4igu/A==', 'face_num': 1}
+Analyze result: {'time_used': 108, 'request_id': '1716493339,84686825-4fd1-4c06-962c-257f7883e9fa', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 28}, 'beauty': {'female_score': 77.051, 'male_score': 77.478}}, 'face_rectangle': {'width': 479, 'top': 70, 'left': 273, 'height': 479}, 'face_token': '5f61cb844bc127b5f5454a24d69af35d'}]}
+Image: Belle (Female Score: 77.051, Male Score: 77.478)
+
+2024-05-23 16:42:19,464 - ERROR - 
+2024-05-23 16:42:19,464 - INFO - Evaluation result: is_beautiful=True
+2024-05-23 16:42:19,464 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-23 16:42:19,464 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-23 16:42:19,790 - INFO - 
+2024-05-23 16:42:19,790 - ERROR - 2024-05-23 16:42:19,548 - INFO - is_beautiful: True
+2024-05-23 16:42:19,548 - INFO - Loading session...
+2024-05-23 16:42:19,548 - INFO - Restoring session: 85b00f0a380a8e337a16feedc8e7048f, http://localhost:62784
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x0000000104cd24a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104ccade8 chromedriver + 4271592
+2   chromedriver                        0x00000001048fc19c chromedriver + 278940
+3   chromedriver                        0x000000010490066c chromedriver + 296556
+4   chromedriver                        0x00000001049024e8 chromedriver + 304360
+5   chromedriver                        0x0000000104902560 chromedriver + 304480
+6   chromedriver                        0x000000010493e3c0 chromedriver + 549824
+7   chromedriver                        0x0000000104976c5c chromedriver + 781404
+8   chromedriver                        0x0000000104933004 chromedriver + 503812
+9   chromedriver                        0x00000001049339ec chromedriver + 506348
+10  chromedriver                        0x0000000104c9a4e8 chromedriver + 4072680
+11  chromedriver                        0x0000000104c9ef94 chromedriver + 4091796
+12  chromedriver                        0x0000000104c8172c chromedriver + 3970860
+13  chromedriver                        0x0000000104c9f87c chromedriver + 4094076
+14  chromedriver                        0x0000000104c746ac chromedriver + 3917484
+15  chromedriver                        0x0000000104cbcae0 chromedriver + 4213472
+16  chromedriver                        0x0000000104cbcc5c chromedriver + 4213852
+17  chromedriver                        0x0000000104cca9e0 chromedriver + 4270560
+18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (JavascriptException(),)
+2024-05-23 16:42:19,777 - INFO - Pressed Right Arrow Key.
+
+2024-05-23 16:42:20,055 - INFO - Running extract_image_bumble.py...
+2024-05-23 16:42:20,055 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-23 16:42:40,190 - INFO - Loading session...
+Restoring session: 85b00f0a380a8e337a16feedc8e7048f, http://localhost:62784
+Waiting for image element...
+Erreur : Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104cd24a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104ccade8 chromedriver + 4271592
+2   chromedriver                        0x00000001048fc19c chromedriver + 278940
+3   chromedriver                        0x000000010493e2c4 chromedriver + 549572
+4   chromedriver                        0x0000000104976c5c chromedriver + 781404
+5   chromedriver                        0x0000000104933004 chromedriver + 503812
+6   chromedriver                        0x00000001049339ec chromedriver + 506348
+7   chromedriver                        0x0000000104c9a4e8 chromedriver + 4072680
+8   chromedriver                        0x0000000104c9ef94 chromedriver + 4091796
+9   chromedriver                        0x0000000104c8172c chromedriver + 3970860
+10  chromedriver                        0x0000000104c9f87c chromedriver + 4094076
+11  chromedriver                        0x0000000104c746ac chromedriver + 3917484
+12  chromedriver                        0x0000000104cbcae0 chromedriver + 4213472
+13  chromedriver                        0x0000000104cbcc5c chromedriver + 4213852
+14  chromedriver                        0x0000000104cca9e0 chromedriver + 4270560
+15  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+Échec de l'extraction de l'image.
+
+2024-05-23 16:42:40,190 - ERROR - 
+2024-05-23 16:42:40,190 - INFO - Running evaluation_bumble.py...
+2024-05-23 16:42:40,190 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-23 16:42:44,422 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716493361,202b7b94-d467-4e13-b444-41494c896c04', 'time_used': 125, 'faces': [{'face_token': 'f28b74c157a0eabbbf9e23db789a8f5c', 'face_rectangle': {'top': 70, 'left': 273, 'width': 479, 'height': 479}, 'attributes': {'facequality': {'value': 93.59, 'threshold': 70.1}}}], 'image_id': 'x73/DRDhrkQJYpxl4igu/A==', 'face_num': 1}
+Analyze result: {'time_used': 69, 'request_id': '1716493364,9079130d-b111-4801-95a1-d8683a4de239', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 28}, 'beauty': {'female_score': 77.051, 'male_score': 77.478}}, 'face_rectangle': {'width': 479, 'top': 70, 'left': 273, 'height': 479}, 'face_token': 'f28b74c157a0eabbbf9e23db789a8f5c'}]}
+Image: Belle (Female Score: 77.051, Male Score: 77.478)
+
+2024-05-23 16:42:44,422 - ERROR - 
+2024-05-23 16:42:44,422 - INFO - Evaluation result: is_beautiful=True
+2024-05-23 16:42:44,422 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-23 16:42:44,422 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-23 16:42:44,663 - INFO - 
+2024-05-23 16:42:44,663 - ERROR - 2024-05-23 16:42:44,505 - INFO - is_beautiful: True
+2024-05-23 16:42:44,505 - INFO - Loading session...
+2024-05-23 16:42:44,505 - INFO - Restoring session: 85b00f0a380a8e337a16feedc8e7048f, http://localhost:62784
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x0000000104cd24a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104ccade8 chromedriver + 4271592
+2   chromedriver                        0x00000001048fc19c chromedriver + 278940
+3   chromedriver                        0x000000010490066c chromedriver + 296556
+4   chromedriver                        0x00000001049024e8 chromedriver + 304360
+5   chromedriver                        0x0000000104902560 chromedriver + 304480
+6   chromedriver                        0x000000010493e3c0 chromedriver + 549824
+7   chromedriver                        0x0000000104976c5c chromedriver + 781404
+8   chromedriver                        0x0000000104933004 chromedriver + 503812
+9   chromedriver                        0x00000001049339ec chromedriver + 506348
+10  chromedriver                        0x0000000104c9a4e8 chromedriver + 4072680
+11  chromedriver                        0x0000000104c9ef94 chromedriver + 4091796
+12  chromedriver                        0x0000000104c8172c chromedriver + 3970860
+13  chromedriver                        0x0000000104c9f87c chromedriver + 4094076
+14  chromedriver                        0x0000000104c746ac chromedriver + 3917484
+15  chromedriver                        0x0000000104cbcae0 chromedriver + 4213472
+16  chromedriver                        0x0000000104cbcc5c chromedriver + 4213852
+17  chromedriver                        0x0000000104cca9e0 chromedriver + 4270560
+18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (JavascriptException(),)
+2024-05-23 16:42:44,651 - INFO - Pressed Right Arrow Key.
+
+2024-05-23 16:42:44,918 - INFO - Running extract_image_bumble.py...
+2024-05-23 16:42:44,918 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []
+2024-05-23 16:43:05,498 - INFO - Loading session...
+Restoring session: 85b00f0a380a8e337a16feedc8e7048f, http://localhost:62784
+Waiting for image element...
+Erreur : Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104cd24a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104ccade8 chromedriver + 4271592
+2   chromedriver                        0x00000001048fc19c chromedriver + 278940
+3   chromedriver                        0x000000010493e2c4 chromedriver + 549572
+4   chromedriver                        0x0000000104976c5c chromedriver + 781404
+5   chromedriver                        0x0000000104933004 chromedriver + 503812
+6   chromedriver                        0x00000001049339ec chromedriver + 506348
+7   chromedriver                        0x0000000104c9a4e8 chromedriver + 4072680
+8   chromedriver                        0x0000000104c9ef94 chromedriver + 4091796
+9   chromedriver                        0x0000000104c8172c chromedriver + 3970860
+10  chromedriver                        0x0000000104c9f87c chromedriver + 4094076
+11  chromedriver                        0x0000000104c746ac chromedriver + 3917484
+12  chromedriver                        0x0000000104cbcae0 chromedriver + 4213472
+13  chromedriver                        0x0000000104cbcc5c chromedriver + 4213852
+14  chromedriver                        0x0000000104cca9e0 chromedriver + 4270560
+15  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+16  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+Échec de l'extraction de l'image.
+
+2024-05-23 16:43:05,499 - ERROR - 
+2024-05-23 16:43:05,499 - INFO - Running evaluation_bumble.py...
+2024-05-23 16:43:05,499 - INFO - Running script: /Users/frederic/tinder-bot/evaluation_bumble.py with args: []
+2024-05-23 16:43:09,792 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+Detection result: {'request_id': '1716493386,f546da77-4d5c-48e6-bfa3-e49b2a4ebab5', 'time_used': 163, 'faces': [{'face_token': 'b6df52aba094f0bbabd8678474c1db04', 'face_rectangle': {'top': 70, 'left': 273, 'width': 479, 'height': 479}, 'attributes': {'facequality': {'value': 93.59, 'threshold': 70.1}}}], 'image_id': 'x73/DRDhrkQJYpxl4igu/A==', 'face_num': 1}
+Analyze result: {'time_used': 73, 'request_id': '1716493389,d85b974f-08d0-4243-b120-0812327d2f96', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 28}, 'beauty': {'female_score': 77.051, 'male_score': 77.478}}, 'face_rectangle': {'width': 479, 'top': 70, 'left': 273, 'height': 479}, 'face_token': 'b6df52aba094f0bbabd8678474c1db04'}]}
+Image: Belle (Female Score: 77.051, Male Score: 77.478)
+
+2024-05-23 16:43:09,792 - ERROR - 
+2024-05-23 16:43:09,792 - INFO - Evaluation result: is_beautiful=True
+2024-05-23 16:43:09,792 - INFO - Running navigate_bumble.py with is_beautiful=True...
+2024-05-23 16:43:09,792 - INFO - Running script: /Users/frederic/tinder-bot/navigate_bumble.py with args: ['true']
+2024-05-23 16:43:10,228 - INFO - 
+2024-05-23 16:43:10,228 - ERROR - 2024-05-23 16:43:09,869 - INFO - is_beautiful: True
+2024-05-23 16:43:09,869 - INFO - Loading session...
+2024-05-23 16:43:09,870 - INFO - Restoring session: 85b00f0a380a8e337a16feedc8e7048f, http://localhost:62784
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 38, in navigate
+    match_button = WebDriverWait(driver, 5).until(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py", line 84, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "/opt/homebrew/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression //span[text()='Voir d'autres profils'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '//span[text()='Voir d'autres profils']' is not a valid XPath expression."}
+  (Session info: chrome=125.0.6422.61)
+Stacktrace:
+0   chromedriver                        0x0000000104cd24a0 chromedriver + 4301984
+1   chromedriver                        0x0000000104ccade8 chromedriver + 4271592
+2   chromedriver                        0x00000001048fc19c chromedriver + 278940
+3   chromedriver                        0x000000010490066c chromedriver + 296556
+4   chromedriver                        0x00000001049024e8 chromedriver + 304360
+5   chromedriver                        0x0000000104902560 chromedriver + 304480
+6   chromedriver                        0x000000010493e3c0 chromedriver + 549824
+7   chromedriver                        0x0000000104976c5c chromedriver + 781404
+8   chromedriver                        0x0000000104933004 chromedriver + 503812
+9   chromedriver                        0x00000001049339ec chromedriver + 506348
+10  chromedriver                        0x0000000104c9a4e8 chromedriver + 4072680
+11  chromedriver                        0x0000000104c9ef94 chromedriver + 4091796
+12  chromedriver                        0x0000000104c8172c chromedriver + 3970860
+13  chromedriver                        0x0000000104c9f87c chromedriver + 4094076
+14  chromedriver                        0x0000000104c746ac chromedriver + 3917484
+15  chromedriver                        0x0000000104cbcae0 chromedriver + 4213472
+16  chromedriver                        0x0000000104cbcc5c chromedriver + 4213852
+17  chromedriver                        0x0000000104cca9e0 chromedriver + 4270560
+18  libsystem_pthread.dylib             0x00000001992aaf94 _pthread_start + 136
+19  libsystem_pthread.dylib             0x00000001992a5d34 thread_start + 8
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1110, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 953, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 687, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 377, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 74, in <module>
+    navigate(driver, is_beautiful)
+  File "/Users/frederic/tinder-bot/navigate_bumble.py", line 45, in navigate
+    logger.info("No match found or error occurred: ", e)
+Message: 'No match found or error occurred: '
+Arguments: (JavascriptException(),)
+2024-05-23 16:43:10,216 - INFO - Pressed Right Arrow Key.
+
+2024-05-23 16:43:10,494 - INFO - Running extract_image_bumble.py...
+2024-05-23 16:43:10,494 - INFO - Running script: /Users/frederic/tinder-bot/extract_image_bumble.py with args: []

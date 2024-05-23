@@ -43,14 +43,19 @@ def open_bumble():
             print("Waiting for Facebook login button...")
             try:
                 # Try finding the button in French
-                facebook_button = WebDriverWait(driver, 10).until(
+                facebook_button = WebDriverWait(driver, 20).until(
                     EC.presence_of_element_located((By.XPATH, "//span[contains(text(), 'Continuer avec Facebook')]"))
                 )
-            except:
+            except Exception as e:
+                print(f"Could not find 'Continuer avec Facebook' button: {e}")
                 # If not found, try finding the button in English
-                facebook_button = WebDriverWait(driver, 10).until(
-                    EC.presence_of_element_located((By.XPATH, "//span[contains(text(), 'Continue with Facebook')]"))
-                )
+                try:
+                    facebook_button = WebDriverWait(driver, 20).until(
+                        EC.presence_of_element_located((By.XPATH, "//span[contains(text(), 'Continue with Facebook')]"))
+                    )
+                except Exception as e:
+                    print(f"Could not find 'Continue with Facebook' button: {e}")
+                    raise e
                 
             print(f"Facebook login button found at {time.time() - start_time:.2f} seconds")
             facebook_button.click()
@@ -58,31 +63,69 @@ def open_bumble():
             
             print(f"Number of windows before switch: {len(driver.window_handles)}")
             print("Switching to Facebook login popup...")
-            WebDriverWait(driver, 20).until(EC.new_window_is_opened(driver.window_handles))
-            driver.switch_to.window(driver.window_handles[1])
+            
+            # Wait for the new window handle directly
+            WebDriverWait(driver, 20).until(lambda d: len(d.window_handles) > 1)
+            new_window_handles = driver.window_handles
+            if len(new_window_handles) > 1:
+                driver.switch_to.window(new_window_handles[1])
+                print(f"New window detected and switched to: {new_window_handles[1]}")
+            else:
+                print("No new window detected.")
+                raise Exception("New window not detected.")
+            
+            time.sleep(5)  # Adding additional wait time to ensure the popup is fully loaded
             print(f"Number of windows after switch: {len(driver.window_handles)}")
             print(f"Switched to Facebook login popup at {time.time() - start_time:.2f} seconds")
             
+            # Ensure the popup window is active
+            driver.switch_to.window(driver.window_handles[1])
+            print("Popup window is active.")
+            
             print("Waiting for email input field...")
-            email_input = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.ID, "email"))
-            )
+            try:
+                email_input = WebDriverWait(driver, 20).until(
+                    EC.presence_of_element_located((By.ID, "email"))
+                )
+            except Exception as e:
+                print(f"Could not find email input field: {e}")
+                raise e
+            
             print(f"Email input field found at {time.time() - start_time:.2f} seconds")
             email_input.send_keys("frederic.de.choulot@gmail.com")
             print(f"Entered email at {time.time() - start_time:.2f} seconds")
 
             print("Entering password...")
-            password_input = driver.find_element(By.ID, "pass")
+            try:
+                password_input = WebDriverWait(driver, 20).until(
+                    EC.presence_of_element_located((By.ID, "pass"))
+                )
+            except Exception as e:
+                print(f"Could not find password input field: {e}")
+                raise e
+            
             password_input.send_keys("1875Miamik@")
             print(f"Entered password at {time.time() - start_time:.2f} seconds")
 
             print("Clicking login button...")
-            login_button = driver.find_element(By.NAME, "login")
+            try:
+                login_button = WebDriverWait(driver, 20).until(
+                    EC.presence_of_element_located((By.NAME, "login"))
+                )
+            except Exception as e:
+                print(f"Could not find login button: {e}")
+                raise e
+            
             login_button.click()
             print(f"Clicked login button at {time.time() - start_time:.2f} seconds")
             
             print("Switching back to Bumble window...")
-            WebDriverWait(driver, 10).until(EC.number_of_windows_to_be(1))
+            try:
+                WebDriverWait(driver, 20).until(EC.number_of_windows_to_be(1))
+            except Exception as e:
+                print(f"Could not switch back to Bumble window: {e}")
+                raise e
+            
             driver.switch_to.window(driver.window_handles[0])
             print(f"Switched back to Bumble window at {time.time() - start_time:.2f} seconds")
 
