@@ -1,0 +1,5 @@
+2024-05-26 09:55:13,279 - INFO - Evaluating image at: /Users/frederic/tinder-bot/profile_image_bumble.jpg
+2024-05-26 09:55:14,610 - INFO - Detection result: {'request_id': '1716728114,a4a2e95e-c544-4b8e-8bdb-1886e7a64ab0', 'time_used': 123, 'faces': [{'face_token': '52871a6a9b0c591cd8c6b634371807be', 'face_rectangle': {'top': 442, 'left': 186, 'width': 498, 'height': 498}, 'attributes': {'facequality': {'value': 72.673, 'threshold': 70.1}}}], 'image_id': '6PjB9vdK15tIyl4/q1J7Kw==', 'face_num': 1}
+2024-05-26 09:55:17,427 - INFO - Analyze result: {'time_used': 74, 'request_id': '1716728117,dbb1d094-091c-4ff6-9918-df934f8d78ff', 'faces': [{'attributes': {'gender': {'value': 'Female'}, 'age': {'value': 22}, 'beauty': {'female_score': 70.909, 'male_score': 67.696}}, 'face_rectangle': {'width': 498, 'top': 442, 'left': 186, 'height': 498}, 'face_token': '52871a6a9b0c591cd8c6b634371807be'}]}
+2024-05-26 09:55:17,427 - INFO - Image: Belle (Female Score: 70.909, Male Score: 67.696)
+2024-05-26 09:55:17,427 - INFO - Total profiles swiped: 1

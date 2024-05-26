@@ -17,7 +17,8 @@ def run_script(script_path, args=[]):
         logger.info(f"Running script: {script_path} with args: {args}")
         result = subprocess.run(["python3", script_path] + args, capture_output=True, text=True, check=True)
         logger.info(result.stdout)
-        logger.error(result.stderr)
+        if result.stderr:
+            logger.error(result.stderr)
         return result
     except subprocess.CalledProcessError as e:
         logger.error(f"Failed to run script {script_path} with args {args}: {e.stderr}")
@@ -65,6 +66,7 @@ def main():
 
     start_time = time.time()
     run_duration = random.uniform(20 * 60, 25 * 60)  # Random duration between 20 and 25 minutes
+    profile_count = 0  # Initialiser le compteur de profils swipés
 
     while time.time() - start_time < run_duration:
         logger.info("Running extract_image_bumble.py...")
@@ -81,6 +83,7 @@ def main():
         logger.info(f"Running navigate_bumble.py with is_beautiful={is_beautiful}...")
         run_script("/Users/frederic/tinder-bot/navigate_bumble.py", [str(is_beautiful).lower()])
 
+        profile_count += 1  # Incrémenter le compteur pour chaque profil évalué
         time.sleep(random.uniform(0.2, 0.3))
 
     logger.info("Terminating the browser...")
@@ -91,6 +94,8 @@ def main():
         logger.info("session_ready_bumble.txt removed.")
     except Exception as e:
         logger.error(f"Failed to remove session_ready_bumble.txt: {e}")
+
+    logger.info(f"Total profiles swiped on Bumble: {profile_count}")
 
 if __name__ == "__main__":
     main()
