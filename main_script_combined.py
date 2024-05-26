@@ -57,7 +57,7 @@ def main():
         current_time = datetime.now(timezone)
         if 8 <= current_time.hour < 23 or (current_time.hour == 23 and current_time.minute <= 30):
             execute_scripts()
-            wait_time = random.uniform(2 * 60 * 60, 2.5 * 60 * 60)
+            wait_time = random.uniform(1.25 * 60 * 60, 1.5 * 60 * 60)
             logger.info(f"Waiting for {wait_time / 3600:.2f} hours before the next run.")
             time.sleep(wait_time)
         else:
