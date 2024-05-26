@@ -16,21 +16,40 @@ def run_script(script_path):
         logger.info(f"Running script: {script_path}")
         result = subprocess.run(["python3", script_path], capture_output=True, text=True, check=True)
         logger.info(result.stdout)
-        logger.error(result.stderr)
+        if result.stderr:
+            logger.error(result.stderr)
+        return result.returncode == 0
     except subprocess.CalledProcessError as e:
         logger.error(f"Failed to run script {script_path}: {e.stderr}")
+        return False
+
+def update_profile_count(script_path, count):
+    logger.info(f"{script_path} swiped {count} profiles.")
 
 def execute_scripts():
-    logger.info("Starting Bumble script...")
-    run_script("/Users/frederic/tinder-bot/main_script_bumble.py")
+    bumble_success = run_script("/Users/frederic/tinder-bot/main_script_bumble.py")
+    if bumble_success:
+        update_profile_count("/Users/frederic/tinder-bot/main_script_bumble.py", 100)  # Placeholder count
+        logger.info("Bumble script completed successfully.")
+        with open("last_success_bumble.txt", "w") as f:
+            f.write(f"Last successful Bumble run: {datetime.now()}")
+    else:
+        logger.error("Bumble script encountered an error.")
+        with open("last_error_bumble.txt", "w") as f:
+            f.write(f"Last Bumble error: {datetime.now()}")
     
-    logger.info("Bumble script completed. Waiting 10 seconds before starting Tinder script...")
-    time.sleep(10)  # Attendre 10 secondes entre les scripts
+    time.sleep(10)  # Wait 10 seconds between scripts
 
-    logger.info("Starting Tinder script...")
-    run_script("/Users/frederic/tinder-bot/main_script_tinder.py")
-
-    logger.info("Tinder script completed.")
+    tinder_success = run_script("/Users/frederic/tinder-bot/main_script_tinder.py")
+    if tinder_success:
+        update_profile_count("/Users/frederic/tinder-bot/main_script_tinder.py", 150)  # Placeholder count
+        logger.info("Tinder script completed successfully.")
+        with open("last_success_tinder.txt", "w") as f:
+            f.write(f"Last successful Tinder run: {datetime.now()}")
+    else:
+        logger.error("Tinder script encountered an error.")
+        with open("last_error_tinder.txt", "w") as f:
+            f.write(f"Last Tinder error: {datetime.now()}")
 
 def main():
     timezone = pytz.timezone("America/Sao_Paulo")

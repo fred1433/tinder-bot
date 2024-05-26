@@ -2,6 +2,11 @@
 
 import requests
 import time
+import logging
+
+# Configurer le logger
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', filename='evaluation_tinder.log', filemode='w')
+logger = logging.getLogger()
 
 def detect_faces(api_key, api_secret, image_path):
     detect_url = "https://api-us.faceplusplus.com/facepp/v3/detect"
@@ -37,14 +42,14 @@ def is_beautiful(beauty_score, threshold=65):
     return beauty_score >= threshold
 
 def evaluate_image(api_key, api_secret, image_path, threshold=58):
-    print("Evaluating image at:", image_path)
+    logger.info(f"Evaluating image at: {image_path}")
     try:
         detect_result = detect_faces(api_key, api_secret, image_path)
-        print("Detection result:", detect_result)
+        logger.info(f"Detection result: {detect_result}")
         if "faces" in detect_result and detect_result["faces"]:
             face_tokens = [face["face_token"] for face in detect_result["faces"]]
             analyze_result = analyze_faces(api_key, api_secret, face_tokens)
-            print("Analyze result:", analyze_result)
+            logger.info(f"Analyze result: {analyze_result}")
 
             if "faces" in analyze_result:
                 for face in analyze_result["faces"]:
@@ -58,16 +63,26 @@ def evaluate_image(api_key, api_secret, image_path, threshold=58):
                         "male_score": male_beauty_score
                     }
     except requests.exceptions.RequestException as e:
-        print(f"Request failed: {e}")
+        logger.error(f"Request failed: {e}")
     except Exception as e:
-        print(f"An error occurred: {e}")
+        logger.error(f"An error occurred: {e}")
 
     return {"beautiful": False, "female_score": 0, "male_score": 0}
 
-if __name__ == "__main__":
+def main():
     api_key = "D-0FxSRjadOI6gja3opbnwjtxaLWlqKy"
     api_secret = "JceEOYbLxQQnhn1MRgRw7UEu12dS18Uf"
-    image_path = "/Users/frederic/tinder-bot/profile_image_tinder.jpg"
+    
+    profile_count = 0
+    image_paths = ["/Users/frederic/tinder-bot/profile_image_tinder.jpg"]  # Liste des chemins d'image à évaluer
 
-    result = evaluate_image(api_key, api_secret, image_path)
-    print(f"Image: {'Belle' if result['beautiful'] else 'Pas Belle'} (Female Score: {result['female_score']}, Male Score: {result['male_score']})")
+    for image_path in image_paths:
+        result = evaluate_image(api_key, api_secret, image_path)
+        if result["beautiful"]:
+            profile_count += 1
+        logger.info(f"Image: {'Belle' if result['beautiful'] else 'Pas Belle'} (Female Score: {result['female_score']}, Male Score: {result['male_score']})")
+    
+    logger.info(f"Total profiles swiped: {profile_count}")
+
+if __name__ == "__main__":
+    main()
